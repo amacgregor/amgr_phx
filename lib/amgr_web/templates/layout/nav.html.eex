@@ -28,12 +28,12 @@
           <p class="text-xl font-bold font-mono hidden lg:block w-auto select-none">Allan MacGregor</p>
         </div>
         <div class="hidden sm:ml-6 sm:flex space-x-8">
-          <%= live_redirect "Blog", to: Routes.blog_path(@conn, :index),
+          <%= live_redirect "Blog", to: Routes.post_path(@conn, :index),
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
-            "@click": "$dispatch('navigate', 'blog')",
+            "@click": "$dispatch('navigate', 'post')",
             ":class": "{
-              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'blog',
-              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'blog'
+              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'post',
+              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'post'
             }" %>
           <%= live_redirect "Projects", to: Routes.projects_path(@conn, :show),
             "@click": "$dispatch('navigate', 'projects')",
@@ -59,7 +59,7 @@
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out"
           %>
 
-          <%= outbound_link "Utilities", to: "https://utils.zest.dev",
+          <%= outbound_link "Digital Garden", to: "https://publish.obsidian.md/allanmacgregor/",
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300"
             %>
         </div>
@@ -79,7 +79,7 @@
   <!-- Mobile Menu -->
   <div :class="{'block': open, 'hidden': !open}" x-cloak class="sm:hidden">
     <div class="pt-2 pb-4 space-y-1 border-b-4 dark:border-brand-700 border-transparent">
-      <%= live_redirect "Blog", to: Routes.blog_path(@conn, :index),
+      <%= live_redirect "Blog", to: Routes.post_path(@conn, :index),
         class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out",
         "@click": "$dispatch('navigate', 'blog')",
         ":class": "{
@@ -103,7 +103,7 @@
           'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'about'
           }" %>
 
-      <%= outbound_link "Utilities", to: "https://utils.zest.dev",
+      <%= outbound_link "Digital Garden", to: "https://publish.obsidian.md/allanmacgregor/",
         class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300"
       %>
     </div>

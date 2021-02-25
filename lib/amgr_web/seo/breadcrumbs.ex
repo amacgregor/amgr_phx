@@ -41,12 +41,12 @@ defmodule AmgrWeb.SEO.Breadcrumbs do
         %BreadcrumbItem{
           position: 1,
           name: "Posts",
-          item: Routes.blog_url(conn, :index)
+          item: Routes.post_url(conn, :index)
         },
         %BreadcrumbItem{
           position: 2,
           name: post.title,
-          item: Routes.blog_url(conn, :show, post.id)
+          item: Routes.post_url(conn, :show, post.id)
         }
       ]
     }

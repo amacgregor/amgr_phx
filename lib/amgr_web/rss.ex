@@ -56,8 +56,8 @@ defmodule AmgrWeb.Rss do
       "<title>#{cdata(post.title)}</title>\n",
       "<dc:creator>#{author}</dc:creator>\n",
       "<description>#{cdata(post.description)}</description>\n",
-      "<link>#{Routes.blog_url(@endpoint, :show, post.id)}</link>\n",
-      "<guid isPermaLink=\"true\">#{Routes.blog_url(@endpoint, :show, post.id)}</guid>\n",
+      "<link>#{Routes.post_url(@endpoint, :show, post.id)}</link>\n",
+      "<guid isPermaLink=\"true\">#{Routes.post_url(@endpoint, :show, post.id)}</guid>\n",
       "<pubDate>#{post_date(post)}</pubDate>\n",
       "<content:encoded>#{cdata(post.body)}</content:encoded>\n",
       "</item>\n"

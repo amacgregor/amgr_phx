@@ -29,8 +29,11 @@ defmodule AmgrWeb.Router do
     pipe_through :browser
 
     live "/", Live.Page, :show
-    live "/blog", Live.BlogIndex, :index, as: :blog
-    live "/blog/:id", Live.BlogShow, :show, as: :blog
+    live "/post", Live.BlogIndex, :index, as: :post
+    live "/post/:id", Live.BlogShow, :show, as: :post
+    live "/til", Live.BlogIndex, :index, as: :til
+    live "/til/:id", Live.BlogShow, :show, as: :til
+
     live "/about", Live.Page, :show, as: :about, session: %{"page" => "about"}
     live "/projects", Live.Page, :show, as: :projects, session: %{"page" => "projects"}
   end
