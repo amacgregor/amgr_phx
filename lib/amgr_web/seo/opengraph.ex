@@ -30,9 +30,9 @@ defmodule AmgrWeb.SEO.OpenGraph do
     article_section: "Software Development",
     # site = twitter handle representing the overall site.
     locale: "en_US",
-    site: "@bernheisel",
+    site: "@allanmacgregor",
     site_title: @generic.title,
-    twitter_handle: "@bernheisel",
+    twitter_handle: "@allanmacgregor",
     type: "website"
   ]
 

@@ -10,16 +10,7 @@ defmodule Amgr.MixProject do
       compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      releases: [
-        bern: [
-          steps: [:assemble, :tar],
-          path: "releases/artifacts",
-          include_executables_for: [:unix],
-          include_erts: true,
-          applications: [runtime_tools: :permanent]
-        ]
-      ]
+      deps: deps()
     ]
   end
 
