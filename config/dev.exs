@@ -53,7 +53,9 @@ config :amgr, AmgrWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"lib/amgr_web/(live|views)/.*(ex)$",
       ~r"lib/amgr_web/templates/.*(eex)$",
-      ~r"posts/*/.*(md)$"
+      ~r"content/posts/*/.*(md)$",
+      ~r"content/til/*/.*(md)$",
+      ~r"content/essays/*/.*(md)$",
     ]
   ]
 

@@ -4,7 +4,7 @@ defmodule Amgr.Blog do
 
   use NimblePublisher,
     build: Amgr.Blog.Post,
-    from: "posts/**/*.md",
+    from: "content/posts/**/*.md",
     as: :posts,
     highlighters: [:makeup_elixir]
 

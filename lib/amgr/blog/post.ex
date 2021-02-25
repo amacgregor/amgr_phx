@@ -1,6 +1,6 @@
 defmodule Amgr.Blog.Post do
   @enforce_keys [:id, :title, :body, :description, :reading_time, :tags, :date]
-  defstruct [:id, :title, :body, :description, :original_url, :reading_time, :tags, :date, :discussion_url, published: true]
+  defstruct [:id, :title, :body, :category, :description, :original_url, :reading_time, :tags, :date, :discussion_url, published: true]
 
   def build(filename, attrs, body) do
     [
