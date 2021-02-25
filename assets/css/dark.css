@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: dark) {
+  .prose strong {
+    @apply text-accent-50 !important;
+  }
+
+  .link, .prose a, .prose a code {
+    @apply text-accent-200;
+  }
+
+  .link:focus, .prose a:focus, .prose a:focus code {
+    @apply text-red-200;
+  }
+
+  .link:visited, .prose a:visited, .prose a:visited code {
+    @apply text-purple-200;
+  }
+
+  .link:hover, .prose a:hover, .prose a:hover code {
+    @apply text-red-200;
+  }
+}

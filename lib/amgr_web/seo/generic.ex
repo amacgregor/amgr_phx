@@ -7,6 +7,6 @@ defmodule AmgrWeb.SEO.Generic do
 
   defstruct [
     description: "A blog about development",
-    title: "David Amgrheisel's Blog"
+    title: "Allan MacGregor's Blog"
   ]
 end

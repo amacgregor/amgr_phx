@@ -14,7 +14,7 @@ defmodule AmgrWeb.RobotView do
   def render("rss.xml", %{}) do
     AmgrWeb.Rss.generate(%AmgrWeb.Rss{
       title: @generic.title,
-      author: "David Amgrheisel",
+      author: "Allan MacGregor",
       description: @generic.description,
       posts: Amgr.Blog.published_posts()
     })
