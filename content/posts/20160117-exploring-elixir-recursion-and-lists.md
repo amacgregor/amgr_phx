@@ -1,5 +1,5 @@
 %{
-title: 'Exploring Elixir Recursion and Lists',
+title: "Exploring Elixir Recursion and Lists",
 category: 'Programming',
 tags: ['elixir','functional programming'],
 description: "Exploration of recursion in elixir with lists"

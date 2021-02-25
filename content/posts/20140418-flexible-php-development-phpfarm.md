@@ -1,5 +1,5 @@
 %{
-title: 'Flexible PHP Development with PHPFarm',
+title: "Flexible PHP Development with PHPFarm",
 category: 'Programming',
 tags: ['programming','PHPFarm','PHP'],
 description: "Learn how to use PHPFarm to create flexible development environments that can run multiple php versions side by side"

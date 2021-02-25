@@ -1,5 +1,5 @@
 %{
-title: 'Functional Programming: The Paradigm for the Next Generation',
+title: "Functional Programming: The Paradigm for the Next Generation",
 category: 'Programming',
 tags: ['programming','functional programming','software engineering','elixir'],
 description: "Functional programming is often treated as the fad of hipster mustachioed programmers, and more often is dismissed without much consideration"

@@ -49,7 +49,7 @@ defmodule AmgrWeb.SEO.OpenGraph do
   end
 
   defp put_image(og, post) do
-    file = "/images/blog/#{post.id}.png"
+    file = "/images/cards/#{post.id}.png"
     exists? =
       [Application.app_dir(:amgr), "/priv/static", file]
       |> Path.join()

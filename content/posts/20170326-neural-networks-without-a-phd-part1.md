@@ -1,5 +1,5 @@
 %{
-title: 'Neural Networks Without a PhD: Introduction',
+title: "Neural Networks Without a PhD: Introduction",
 category: 'Programming',
 tags: ['machine learning','programming','neural networks'],
 description: "A series focused on presenting Neural Networks and the related concepts in layman's terms, that is to say without specialized knowledge in math or machine learning."

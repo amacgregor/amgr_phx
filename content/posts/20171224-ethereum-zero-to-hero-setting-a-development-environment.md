@@ -1,5 +1,5 @@
 %{
-title: 'Ethereum Zero to Hero: Setting a Development Environment',
+title: "Ethereum Zero to Hero: Setting a Development Environment",
 category: 'Blockchain',
 tags: ['blockchain','programming','ethereum'],
 description: "Setting up a basic private test network for Ethereum development"
