@@ -2,7 +2,7 @@
 title: 'Ethereum Zero to Hero: Introduction',
 category: 'Blockchain',
 tags: ['blockchain','programming','ethereum'],
-description: 'An introduction to Ethereum Development'
+description: "An introduction to Ethereum Development"
 }
 ---
 

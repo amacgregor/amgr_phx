@@ -2,7 +2,7 @@
 title: "WTF is Flow-Based Programming",
 category: "Programming",
 tags: ["programming","functional programming","flow-based programming","software architecture"],
-description: 'A quick introduction and overview on the ideas behind Flow-Based Programming'
+description: "A quick introduction and overview on the ideas behind Flow-Based Programming"
 }
 ---
 

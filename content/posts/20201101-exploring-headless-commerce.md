@@ -2,7 +2,7 @@
 title: "Exploring Headless Commerce",
 category: "Technology",
 tags: ["e-commerce","headless","technology"],
-description: 'Exploring the current state of headless commerce and how to best take advantage'
+description: "Exploring the current state of headless commerce and how to best take advantage"
 }
 ---
 

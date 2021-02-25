@@ -1,9 +1,9 @@
 %{
     title: "Circuit Breaker Pattern in Elixir",
     category: "Programming",
-    tags: ["elixir", "functional programming", "design patterns"], 
-  description: 'Design for failure with the circuit breaker pattern'
-  }
+    tags: ["elixir", "functional programming", "design patterns"],
+description: "Design for failure with the circuit breaker pattern"
+}
 ---
 
 <!--Design for failure with the circuit breaker pattern-->

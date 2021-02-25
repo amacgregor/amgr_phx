@@ -2,7 +2,7 @@
 title: 'Ethereum Zero to Hero: Developing Our First Contract',
 category: 'Blockchain',
 tags: ['blockchain','programming','ethereum'],
-description: 'Developing a basic contact using Ethereum'
+description: "Developing a basic contact using Ethereum"
 }
 ---
 

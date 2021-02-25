@@ -2,7 +2,7 @@
 title: "You Should Learn Functional Programming in 2017",
 category: 'Programming',
 tags: ['programming','functional programming','software architecture','elixir'],
-description: 'Functional programming is making a big comeback and here is why developers should make their mission for 2017 to learn a functional language'
+description: "Functional programming is making a big comeback and here is why developers should make their mission for 2017 to learn a functional language"
 }
 ---
 

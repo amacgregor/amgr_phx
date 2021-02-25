@@ -2,7 +2,7 @@
     title: "Using Abbreviations instead of Aliases",
     category: "Linux",
     tags: ["linux", "tips", "shell", "fish"],
-    description: 'Why you should start using abbreviations instead of aliases'
+    description: "Why you should start using abbreviations instead of aliases"
 }
 ---
 
