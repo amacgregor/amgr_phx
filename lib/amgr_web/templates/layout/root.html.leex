@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, shrink-to-fit=no"/>
     <meta name="color-scheme" content="dark light">
     <%= AmgrWeb.SEO.meta(@conn, view_module(@conn), assigns) %>
-    <link rel="canonical" href="https://bernheisel.com<%= Phoenix.Controller.current_path(@conn) %>" />
+    <link rel="canonical" href="https://allanmacgregor.com<%= Phoenix.Controller.current_path(@conn) %>" />
     <link rel="preload" type="font/woff2" as="font" href="<%= Routes.static_path(@conn, "/fonts/FiraCode-VF.woff2") %>" crossorigin="anonymous" />
     <link rel="preload" type="font/woff2" as="font" href="<%= Routes.static_path(@conn, "/fonts/Inter-roman.var.woff2") %>" crossorigin="anonymous" />
     <%= render "_icons.html", assigns %>
@@ -17,8 +17,8 @@
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script async defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/vendor.js") %>"></script>
     <%= if Application.get_env(:amgr, :app_env) == :prod do %>
-      <script async defer data-exclude="/admin/*" data-domain="bernheisel.com" src="https://plausible.bernheisel.com/js/plausible.exclusions.js"></script>
-      <link rel="dns-prefetch" href="https://plausible.bernheisel.com" />
+      <script async defer data-exclude="/admin/*" data-domain="allanmacgregor.com" src="https://plausible.allanmacgregor.com/js/plausible.exclusions.js"></script>
+      <link rel="dns-prefetch" href="https://plausible.allanmacgregor.com" />
     <% end %>
   </head>
   <body class="dark:bg-gray-900 dark:text-gray-100">

@@ -25,8 +25,8 @@ config :amgr, AmgrWeb.Endpoint,
   pubsub_server: Amgr.PubSub,
   live_view: [signing_salt: "KtGkqxBX"],
   rss_root: %URI{
-    authority: "bernheisel.com",
-    host: "bernheisel.com",
+    authority: "allanmacgregor.com",
+    host: "allanmacgregor.com",
     scheme: "https",
     port: 443,
     path: nil
