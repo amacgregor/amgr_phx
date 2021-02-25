@@ -1,5 +1,5 @@
 %{
-title: 'On Codes on Conduct',
+title: "On Codes on Conduct",
 category: "Society",
 tags: ["codes of conduct", "community", "social justice", "equality"],
 description: "My opinions and ruminations on the whole debate about PHP's code of conduct"
@@ -40,7 +40,7 @@ Let me present a better version of the second paragraph:
 
 > We are committed to evaluating contributions **within project channels** (such as reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other project activities) without regard to the contributor's **level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, politics, or activity outside of project channels.**
 
-On it we limit the scope to only the project channels — which should be clearly defined in a later section — as well it accounts for political opinions and views of the contributors and defends them from discrimination. Let's move on to the next paragraph:
+On it we limit the scope to only the project channels — which should be clearly defined in a later section — as well it accounts for political opinions and views of the contributors and defends them from discrimination. Let's move on to the next paragraph:
 
 > Examples of unacceptable behaviour by participants include:
 >
