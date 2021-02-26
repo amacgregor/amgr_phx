@@ -86,8 +86,8 @@ jobs:
       run: mix coveralls.github
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}}
-    - name: Validate URLs
-      run: mix validate_urls
+#    - name: Validate URLs
+#      run: mix validate_urls
     - name: Notify Discord about Status
       uses: sarisia/actions-status-discord@v1
       if: always()
