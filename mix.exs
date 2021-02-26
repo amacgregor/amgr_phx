@@ -10,7 +10,14 @@ defmodule Amgr.MixProject do
       compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -41,6 +48,10 @@ defmodule Amgr.MixProject do
       # Test
       {:floki, ">= 0.0.0", only: :test},
       {:finch, "~> 0.3", only: :test},
+      {:excoveralls, "~> 0.12", only: :test},
+      {:sobelow, "~> 0.8", only: :dev},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev
       {:phoenix_live_reload, "~> 1.2", only: :dev}
     ]
@@ -48,7 +59,8 @@ defmodule Amgr.MixProject do
 
   defp aliases do
     [
-      setup: ["deps.get", "cmd yarn --cwd ./assets install"]
+      setup: ["deps.get", "cmd yarn --cwd ./assets install"],
+      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"]
     ]
   end
 end

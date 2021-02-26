@@ -30,7 +30,7 @@ This in essence is the problem with multiple inheritance, (un)fortunately PHP be
 
 ## A Trait Traits
 
-> Traits are a mechanism for code reuse in single inheritance languages such as PHP. A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies [php.net](php.net/traits)
+> Traits are a mechanism for code reuse in single inheritance languages such as PHP. A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies [php.net](https://php.net/traits)
 
 An easy way to conceptualize **traits** would be to think of them as an interface with an implementation. As we mentioned before single inheritance has been part of **PHP OOP** (Object Oriented Implementation) over the years this more than one developer has been frustrated by this characteristic when trying to write code that is both clean on a complex system.
 
