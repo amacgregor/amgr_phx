@@ -23,13 +23,13 @@ defmodule AmgrWeb.Rss do
       """,
       "<channel>\n",
       """
-      <atom:link href="#{Routes.robot_url(@endpoint, :rss)}" rel="self" type="application/rss+xml" />
+      <atom:link href="#{root_domain()}#{Routes.robot_path(@endpoint, :rss)}" rel="self" type="application/rss+xml" />
       """,
       "<title>#{cdata(rss.title)}</title>\n",
       "<language>#{rss.language}</language>\n",
       "<description>#{cdata(rss.description)}</description>\n",
       "<pubDate>#{post_date(rss.posts)}</pubDate>\n",
-      "<link>#{Routes.page_url(@endpoint, :show)}</link>\n",
+      "<link>#{root_domain()}#{Routes.page_path(@endpoint, :show)}</link>\n",
       "<copyright>Copyright #{year} #{rss.author}</copyright>\n",
       "<generator>Artisinally Crafted by Yours Truly</generator>\n",
       output
@@ -58,8 +58,8 @@ defmodule AmgrWeb.Rss do
       "<title>#{cdata(post.title)}</title>\n",
       "<dc:creator>#{author}</dc:creator>\n",
       "<description>#{cdata(post.description)}</description>\n",
-      "<link>#{Routes.post_url(@endpoint, :show, post.id)}</link>\n",
-      "<guid isPermaLink=\"true\">#{Routes.post_url(@endpoint, :show, post.id)}</guid>\n",
+      "<link>#{root_domain()}#{Routes.post_path(@endpoint, :show, post.id)}</link>\n",
+      "<guid isPermaLink=\"true\">#{root_domain()}#{Routes.post_path(@endpoint, :show, post.id)}</guid>\n",
       "<pubDate>#{post_date(post)}</pubDate>\n",
       "<content:encoded>#{cdata(post.body)}</content:encoded>\n",
       "</item>\n"
@@ -67,4 +67,8 @@ defmodule AmgrWeb.Rss do
   end
 
   def cdata(content), do: "<![CDATA[#{content}]]>"
+
+  def root_domain() do
+    Application.get_env(:amgr, AmgrWeb.Endpoint)[:asset_url] || ""
+  end
 end

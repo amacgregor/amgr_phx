@@ -18,4 +18,8 @@ defmodule AmgrWeb.SitemapView do
     |> DateTime.to_date()
     |> to_string()
   end
+
+  def root_domain() do
+    Application.get_env(:amgr, AmgrWeb.Endpoint)[:asset_url] || ""
+  end
 end

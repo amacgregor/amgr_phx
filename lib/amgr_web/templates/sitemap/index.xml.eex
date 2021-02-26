@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc><%= Routes.post_path(@conn, :index) %></loc>
+        <loc><%= root_domain() %><%= Routes.post_path(@conn, :index) %></loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc><%= Routes.til_path(@conn, :index) %></loc>
+        <loc><%= root_domain() %><%= Routes.til_path(@conn, :index) %></loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc><%= Routes.about_path(@conn, :show) %></loc>
+        <loc><%= root_domain() %><%= Routes.about_path(@conn, :show) %></loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc><%= Routes.projects_path(@conn, :show) %></loc>
+        <loc><%= root_domain() %><%= Routes.projects_path(@conn, :show) %></loc>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <%= for post <- @posts do %>
     <url>
-        <loc><%= Routes.post_url(@conn, :show, post.id) %></loc>
+        <loc><%= root_domain() %><%= Routes.post_path(@conn, :show, post.id) %></loc>
         <lastmod><%= post.date %></lastmod>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
@@ -30,7 +30,7 @@
     <% end %>
     <%= for entry <- @til do %>
     <url>
-        <loc><%= Routes.til_url(@conn, :show, entry.id) %></loc>
+        <loc><%= root_domain() %><%= Routes.til_path(@conn, :show, entry.id) %></loc>
         <lastmod><%= entry.date %></lastmod>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
