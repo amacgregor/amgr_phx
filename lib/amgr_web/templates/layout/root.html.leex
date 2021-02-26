@@ -17,7 +17,7 @@
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script async defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/vendor.js") %>"></script>
     <%= if Application.get_env(:amgr, :app_env) == :prod do %>
-      <script async defer data-exclude="/admin/*" data-domain="allanmacgregor.com" src="https://plausible.allanmacgregor.com/js/plausible.exclusions.js"></script>
+      <script async defer data-exclude="/admin/*" data-domain="allanmacgregor.com" src="https://plausible.io/js/plausible.js"></script>
       <link rel="dns-prefetch" href="https://plausible.allanmacgregor.com" />
     <% end %>
   </head>
