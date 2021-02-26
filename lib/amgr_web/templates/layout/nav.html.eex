@@ -35,12 +35,26 @@
               'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'post',
               'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'post'
             }" %>
+          <%= live_redirect "TIL", to: Routes.til_path(@conn, :index),
+            class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
+            "@click": "$dispatch('navigate', 'til')",
+            ":class": "{
+              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'til',
+              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'til'
+            }" %>
           <%= live_redirect "Projects", to: Routes.projects_path(@conn, :show),
             "@click": "$dispatch('navigate', 'projects')",
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
             ":class": "{
               'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'projects',
               'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'projects'
+            }" %>
+          <%= live_redirect "About Me", to: Routes.about_path(@conn, :show),
+            "@click": "$dispatch('navigate', 'about')",
+            class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
+            ":class": "{
+              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'about',
+              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'about'
             }" %>
           <%# live_redirect "Components", to: Routes.components_path(@conn, :index),
             "@click": "$dispatch('navigate', 'components')",
@@ -50,15 +64,6 @@
             }",
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out"
           %>
-          <%# live_redirect "About", to: Routes.about_path(@conn, :show),
-            "@click": "$dispatch('navigate', 'about')",
-            ":class": "{
-              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'about',
-              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'about'
-            }",
-            class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out"
-          %>
-
           <%= outbound_link "Digital Garden", to: "https://publish.obsidian.md/allanmacgregor/",
             class: "inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300"
             %>
@@ -79,12 +84,19 @@
   <!-- Mobile Menu -->
   <div :class="{'block': open, 'hidden': !open}" x-cloak class="sm:hidden">
     <div class="pt-2 pb-4 space-y-1 border-b-4 dark:border-brand-700 border-transparent">
-      <%= live_redirect "Blog", to: Routes.post_path(@conn, :index),
+        <%= live_redirect "Blog", to: Routes.post_path(@conn, :index),
+          class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out",
+          "@click": "$dispatch('navigate', 'blog')",
+          ":class": "{
+            'border-brand-500 text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-gray-700 focus:text-brand-800 dark:focus:bg-gray-800 dark:focus:border-brand-300 focus:bg-brand-100 focus:border-brand-700': currentRoute === 'blog',
+            'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'blog'
+}" %>
+      <%= live_redirect "TIL", to: Routes.til_path(@conn, :index),
         class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out",
-        "@click": "$dispatch('navigate', 'blog')",
+        "@click": "$dispatch('navigate', 'til')",
         ":class": "{
-          'border-brand-500 text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-gray-700 focus:text-brand-800 dark:focus:bg-gray-800 dark:focus:border-brand-300 focus:bg-brand-100 focus:border-brand-700': currentRoute === 'blog',
-          'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'blog'
+          'border-brand-500 text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-gray-700 focus:text-brand-800 dark:focus:bg-gray-800 dark:focus:border-brand-300 focus:bg-brand-100 focus:border-brand-700': currentRoute === 'til',
+          'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'til'
 }" %>
 
       <%= live_redirect "Projects", to: Routes.projects_path(@conn, :show),
@@ -94,18 +106,17 @@
           'border-brand-500 text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-gray-700 focus:text-brand-800 dark:focus:bg-gray-800 dark:focus:border-brand-300 focus:bg-brand-100 focus:border-brand-700': currentRoute === 'projects',
           'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'projects'
         }" %>
-
-      <%# live_redirect "About", to: Routes.about_path(@conn, :show),
+      <%= live_redirect "About Me", to: Routes.about_path(@conn, :show),
+            "@click": "$dispatch('navigate', 'about')",
         class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out",
-        "@click": "$dispatch('navigate', 'about')",
         ":class": "{
           'border-brand-500 text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-gray-700 focus:text-brand-800 dark:focus:bg-gray-800 dark:focus:border-brand-300 focus:bg-brand-100 focus:border-brand-700': currentRoute === 'about',
           'border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300': currentRoute !== 'about'
-          }" %>
+}" %>
 
-      <%= outbound_link "Digital Garden", to: "https://publish.obsidian.md/allanmacgregor/",
-        class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300"
-      %>
+    <%= outbound_link "Digital Garden", to: "https://publish.obsidian.md/allanmacgregor/",
+      class: "block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-600 dark:text-gray-300 dark:hover:text-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 hover:border-gray-300 dark:focus:text-gray-200 dark:focus:bg-gray-800 dark:focus:border-gray-700 focus:text-gray-800 dark:focus:bg-gray-900 focus:bg-gray-50 focus:border-gray-300"
+    %>
     </div>
   </div>
 </nav>
