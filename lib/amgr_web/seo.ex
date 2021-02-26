@@ -15,6 +15,15 @@ defmodule AmgrWeb.SEO do
     )
   end
 
+  def meta(conn, AmgrWeb.Live.TilShow, %{post: post}) do
+    render(
+      "meta.html",
+      @default_assigns
+      |> put_opengraph_tags(conn, post)
+      |> put_breadcrumbs(conn, post)
+    )
+  end
+
   def meta(_, _, _), do: render("meta.html", @default_assigns)
 
   def put_opengraph_tags(assigns, conn, event),

@@ -48,6 +48,18 @@ defmodule AmgrWeb.SEO.OpenGraph do
     |> put_image(post)
   end
 
+  def build(conn, %Amgr.Til.Post{} = post) do
+    %__MODULE__{
+      url: Phoenix.Controller.current_url(conn),
+      title: truncate(post.title, 70),
+      type: "article",
+      published_at: format_date(post.date),
+      reading_time: format_time(post.reading_time),
+      description: String.trim(truncate(post.description, 200))
+    }
+    |> put_image(post)
+  end
+
   defp put_image(og, post) do
     file = "/images/cards/#{post.id}.png"
 

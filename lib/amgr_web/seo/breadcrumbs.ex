@@ -49,4 +49,22 @@ defmodule AmgrWeb.SEO.Breadcrumbs do
       ]
     }
   end
+
+  def build(conn, %Amgr.Til.Post{} = post) do
+    %BreadcrumbList{
+      itemListElement: [
+        %BreadcrumbItem{
+          position: 1,
+          name: "Posts",
+          item: Routes.post_url(conn, :index)
+        },
+        %BreadcrumbItem{
+          position: 2,
+          name: post.title,
+          item: Routes.post_url(conn, :show, post.id)
+        }
+      ]
+    }
+  end
+
 end
