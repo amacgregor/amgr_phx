@@ -18,7 +18,7 @@ defmodule AmgrWeb.RobotController do
   def site_webmanifest(conn, _params) do
     json(conn, %{
       name: "allanmacgregor.com",
-      short_name: "Amgrheisel",
+      short_name: "AMGR",
       icons:
         for [size: size, density: density] <- @sizes do
           %{
