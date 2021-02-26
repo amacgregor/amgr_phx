@@ -19,7 +19,10 @@ defmodule AmgrWeb.Router do
   # Redirects
   redirect "/blog", "/posts", :permanent
   redirect "/blog/:page", "/posts", :permanent
-  redirect "/machine/learning/2016/06/06/machine-learning-a-simple-neural-network.html", "/posts/machine-learning-a-simple-neural-network", :permanent
+
+  redirect "/machine/learning/2016/06/06/machine-learning-a-simple-neural-network.html",
+           "/posts/machine-learning-a-simple-neural-network",
+           :permanent
 
   scope "/", AmgrWeb, log: false do
     pipe_through [:robots]
