@@ -11,7 +11,7 @@ on:
 jobs:
   mix-check:
     name: Mix Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Set up Elixir
@@ -40,12 +40,14 @@ jobs:
           status: ${{ job.status }}
           description: Elixir quality checks
   build:
+    name: Mix Test
     runs-on: ubuntu-20.04
     env:
       MIX_ENV: test
       AUTH_USER: admin
       AUTH_PASS: admin
       CI: "true"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     container:
       image: hexpm/elixir:1.10.4-erlang-23.0.3-alpine-3.12.0
     steps:
