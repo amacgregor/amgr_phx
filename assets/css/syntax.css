@@ -2,6 +2,11 @@
   @apply bg-gray-50;
 }
 
+.prose code.inline {
+  @apply text-purple-800 bg-gray-200
+}
+
+
 .makeup .hll {background-color: #ffffcc}
 .makeup {
   @apply font-mono;

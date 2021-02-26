@@ -1,6 +1,7 @@
 defmodule AmgrWeb.Router do
   use AmgrWeb, :router
   import Phoenix.LiveDashboard.Router
+  import Redirect
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,6 +15,11 @@ defmodule AmgrWeb.Router do
   pipeline :robots do
     plug :accepts, ["xml", "json", "webmanifest"]
   end
+
+  # Redirects
+  redirect "/blog", "/posts", :permanent
+  redirect "/blog/:page", "/posts", :permanent
+  redirect "/machine/learning/2016/06/06/machine-learning-a-simple-neural-network.html", "/posts/machine-learning-a-simple-neural-network", :permanent
 
   scope "/", AmgrWeb, log: false do
     pipe_through [:robots]
@@ -29,8 +35,8 @@ defmodule AmgrWeb.Router do
     pipe_through :browser
 
     live "/", Live.Page, :show
-    live "/post", Live.BlogIndex, :index, as: :post
-    live "/post/:id", Live.BlogShow, :show, as: :post
+    live "/posts", Live.BlogIndex, :index, as: :post
+    live "/posts/:id", Live.BlogShow, :show, as: :post
     live "/til", Live.TilIndex, :index, as: :til
     live "/til/:id", Live.TilShow, :show, as: :til
 
