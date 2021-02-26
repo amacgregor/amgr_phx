@@ -59,4 +59,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       with:
         status: ${{ job.status }}
-            description: Elixir test and code coverage
+        description: Elixir test and code coverage
