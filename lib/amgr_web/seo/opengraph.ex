@@ -55,7 +55,7 @@ defmodule AmgrWeb.SEO.OpenGraph do
       |> Path.join()
       |> File.exists?()
     if exists? do
-      %{og | image_url: Routes.static_url(@endpoint, file), image_alt: post.title}
+      %{og | image_url: static_url <> Routes.static_path(@endpoint, file), image_alt: post.title}
     else
       og
     end
@@ -72,4 +72,10 @@ defmodule AmgrWeb.SEO.OpenGraph do
   defp format_date(date), do: Date.to_iso8601(date)
 
   defp format_time(length), do: "#{length} minutes"
+
+
+  defp static_url() do
+    Application.get_env(:amgr, AmgrWeb.Endpoint)[:asset_url] || ""
+  end
+
 end

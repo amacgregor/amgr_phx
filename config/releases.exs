@@ -1,7 +1,8 @@
 import Config
 
-
 config :amgr, AmgrWeb.Endpoint,
   server: true,
-  http: [port: {:system, "PORT"}], # Needed for Phoenix 1.2 and 1.4. Doesn't hurt for 1.3.
-  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 443]
+  http: [port: {:system, "PORT"}],
+  url: [host: "amgr.dev", port: 443],
+  asset_url: "https://allanmacgregor.com"
+  check_origin: ["https://amgr.dev", "//amgr.dev", "//allanmacgregor.com"]
