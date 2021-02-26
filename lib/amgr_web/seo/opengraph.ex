@@ -55,7 +55,7 @@ defmodule AmgrWeb.SEO.OpenGraph do
       |> Path.join()
       |> File.exists?()
     if exists? do
-      %{og | image_url: static_url <> Routes.static_path(@endpoint, file), image_alt: post.title}
+      %{og | image_url: static_url() <> Routes.static_path(@endpoint, file), image_alt: post.title}
     else
       og
     end
