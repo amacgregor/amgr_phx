@@ -4,6 +4,7 @@ defmodule AmgrWeb.RobotView do
   @generic %Generic{}
 
   def render("robots.txt", %{env: :prod}), do: ""
+
   def render("robots.txt", %{env: _}) do
     """
     User-agent: *

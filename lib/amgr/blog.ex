@@ -42,4 +42,3 @@ defmodule Amgr.Blog do
     end
   end
 end
-

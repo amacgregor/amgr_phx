@@ -19,14 +19,15 @@ defmodule AmgrWeb.RobotController do
     json(conn, %{
       name: "allanmacgregor.com",
       short_name: "Amgrheisel",
-      icons: for [size: size, density: density] <- @sizes do
-        %{
-          src: Routes.static_path(conn, "/images/android-chrome-#{size}.png"),
-          sizes: size,
-          density: density,
-          type: "image/png"
-        }
-      end,
+      icons:
+        for [size: size, density: density] <- @sizes do
+          %{
+            src: Routes.static_path(conn, "/images/android-chrome-#{size}.png"),
+            sizes: size,
+            density: density,
+            type: "image/png"
+          }
+        end,
       theme_color: "#663399",
       display: "minimal-ui",
       background_color: "#ffffff"

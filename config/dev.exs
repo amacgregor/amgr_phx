@@ -56,7 +56,7 @@ config :amgr, AmgrWeb.Endpoint,
       ~r"lib/amgr_web/templates/.*(eex)$",
       ~r"content/posts/*/.*(md)$",
       ~r"content/til/*/.*(md)$",
-      ~r"content/essays/*/.*(md)$",
+      ~r"content/essays/*/.*(md)$"
     ]
   ]
 

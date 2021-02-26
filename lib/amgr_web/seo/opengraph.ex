@@ -43,19 +43,25 @@ defmodule AmgrWeb.SEO.OpenGraph do
       type: "article",
       published_at: format_date(post.date),
       reading_time: format_time(post.reading_time),
-      description: String.trim(truncate(post.description, 200)),
+      description: String.trim(truncate(post.description, 200))
     }
     |> put_image(post)
   end
 
   defp put_image(og, post) do
     file = "/images/cards/#{post.id}.png"
+
     exists? =
       [Application.app_dir(:amgr), "/priv/static", file]
       |> Path.join()
       |> File.exists?()
+
     if exists? do
-      %{og | image_url: static_url() <> Routes.static_path(@endpoint, file), image_alt: post.title}
+      %{
+        og
+        | image_url: static_url() <> Routes.static_path(@endpoint, file),
+          image_alt: post.title
+      }
     else
       og
     end
@@ -73,9 +79,7 @@ defmodule AmgrWeb.SEO.OpenGraph do
 
   defp format_time(length), do: "#{length} minutes"
 
-
   defp static_url() do
     Application.get_env(:amgr, AmgrWeb.Endpoint)[:asset_url] || ""
   end
-
 end

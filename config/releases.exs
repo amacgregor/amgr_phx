@@ -5,4 +5,9 @@ config :amgr, AmgrWeb.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "amgr.dev", port: 443],
   asset_url: "https://amgr.dev",
-  check_origin: ["https://amgr.dev", "//amgr.dev", "//allanmacgregor.com", "//allanmacgregor.gigalixirapp.com"]
+  check_origin: [
+    "https://amgr.dev",
+    "//amgr.dev",
+    "//allanmacgregor.com",
+    "//allanmacgregor.gigalixirapp.com"
+  ]
