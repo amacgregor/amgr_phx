@@ -31,7 +31,7 @@ Organizing the teams was a topic that the organizers spend a lot of time discuss
 
 Normally in an offline hackathon rules are a bit more strict and people are easier to organize, doing an online hackthon presented many challenges in terms of communication, organization and participation.
 
-In the end it was decided that rather than enforcing the team allocation, we would use the votes registered at [magento.corehack.de](magento.corehack.de) to build a initial team rooster based on each persons vote, this initial rooster is just a suggestion for the initial team organization and participants could switch and even start new projects.
+In the end it was decided that rather than enforcing the team allocation, we would use the votes registered at [magento.corehack.de](https://magento.corehack.de) to build a initial team rooster based on each persons vote, this initial rooster is just a suggestion for the initial team organization and participants could switch and even start new projects.
 
 In the end, I'm happy to say that the teams where more than capable of organizing themselves and there very few if any problems at all.
 

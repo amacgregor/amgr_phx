@@ -52,3 +52,11 @@ jobs:
       run: mix test
     - name: Validate URLs
       run: mix validate_urls
+    - name: Notify Discord about Status
+      uses: sarisia/actions-status-discord@v1
+      if: always()
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      with:
+        status: ${{ job.status }}
+            description: Elixir test and code coverage

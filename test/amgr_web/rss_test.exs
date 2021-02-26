@@ -48,8 +48,8 @@ defmodule AmgrWeb.RssTest do
       <title><![CDATA[Foo Title]]></title>
       <dc:creator>FooBear</dc:creator>
       <description><![CDATA[Warning, this is only a test]]></description>
-      <link>http://localhost:4002/blog/foo-id</link>
-      <guid isPermaLink="true">http://localhost:4002/blog/foo-id</guid>
+      <link>http://localhost:4002/post/foo-id</link>
+      <guid isPermaLink="true">http://localhost:4002/post/foo-id</guid>
       <pubDate>Thu, 02 Jan 2020 00:00:00 -0500</pubDate>
       <content:encoded><![CDATA[<p>Some words</p>]]></content:encoded>
       </item>
@@ -57,8 +57,8 @@ defmodule AmgrWeb.RssTest do
       <title><![CDATA[Bar Title]]></title>
       <dc:creator>FooBear</dc:creator>
       <description><![CDATA[Warning, this is only a test]]></description>
-      <link>http://localhost:4002/blog/bar-id</link>
-      <guid isPermaLink="true">http://localhost:4002/blog/bar-id</guid>
+      <link>http://localhost:4002/post/bar-id</link>
+      <guid isPermaLink="true">http://localhost:4002/post/bar-id</guid>
       <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
       <content:encoded><![CDATA[<p>Some words</p>]]></content:encoded>
       </item>

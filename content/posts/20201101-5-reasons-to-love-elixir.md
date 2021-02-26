@@ -171,7 +171,7 @@ Elixir, in my opinion can pack a lot of expressiveness into a very small amount 
 
 ## Phoenix Framework
 
-> Phoenix is a web development framework written in the functional programming language Elixir. Phoenix uses a server-side model-view-controller pattern. Based on the Plug library, and ultimately the Cowboy Erlang framework, it was developed to provide highly performant and scalable web applications. - [wikipedia](<https://en.wikipedia.org/wiki/Phoenix_(web_framework)>)
+> Phoenix is a web development framework written in the functional programming language Elixir. Phoenix uses a server-side model-view-controller pattern. Based on the Plug library, and ultimately the Cowboy Erlang framework, it was developed to provide highly performant and scalable web applications. - [wikipedia](https://en.wikipedia.org/wiki/Phoenix_(web_framework))
 
 Saving the best for last we have the **Phoenix Framework**, which often gets compared to the Laravel or Ruby on rails; but in my honest opinion is much much better.
 
