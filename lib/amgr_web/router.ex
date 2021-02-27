@@ -45,6 +45,7 @@ defmodule AmgrWeb.Router do
 
     live "/about", Live.Page, :show, as: :about, session: %{"page" => "about"}
     live "/projects", Live.Page, :show, as: :projects, session: %{"page" => "projects"}
+    live "/books", Live.Page, :show, as: :books, session: %{"page" => "books"}
   end
 
   scope "/admin" do

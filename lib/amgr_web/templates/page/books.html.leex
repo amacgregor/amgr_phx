@@ -1,0 +1,35 @@
+<%# projects.html. eex template %>
+<div class="dark:prose-dark prose lg:prose-xl">
+  <article>
+    <h2>Magento PHP Developer's Guide</h2>
+    <div class="space-x-4">
+      <span class="font-bold">Status:</span><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800">Discontinued</span>
+      <span class="font-bold">Purchase:</span><%= outbound_link "Packtpub", to: "https://www.packtpub.com/product/magento-php-developer-s-guide/9781782163060" %>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-8 gap-4">
+      <div class="col-span-4"><%= img_tag Routes.static_path(@socket, "/images/books/magento-1.jpg"), class: "p-0", alt: "DateTimeParser sample usage screenshot" %></div>
+      <div class="col-span-4 text-lg">
+        <h3>About this book:</h3>
+        <p>Magento has completely reshaped the face of e-commerce since its launch in 2008. Its revolutionary focus on object oriented and EAV design patterns has allowed it to become the preferred tool for developers and retailers alike.</p>
+        <p><strong>Magento PHP Developer’s Guide</strong> is a complete reference to Magento, allowing developers to understand its fundamental concepts, and get them developing and testing Magento code.</p>
+      </div>
+    </div>
+  </article>
+  <article>
+    <h2>Test Driven Magento Extension Development</h2>
+    <div class="space-x-4">
+      <span class="font-bold">Status:</span><span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800">Discontinued</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-8 gap-4">
+      <div class="col-span-4">
+        <%= img_tag Routes.static_path(@socket, "/images/books/TDDPortrait_large.png"), class: "p-0", alt: "DateTimeParser sample usage screenshot" %>
+        </div>
+      <div class="col-span-4 text-lg">
+        <h3>About this book:</h3>
+        <p>Learn how to effectively build and test extensions using TDD/BDD and tools like <strong>PHPspec, Behat and PHPUnit</strong></p>
+      </div>
+    </div>
+  </article>
+</div>
