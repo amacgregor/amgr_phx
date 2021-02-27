@@ -2,7 +2,7 @@
 const { inputRequired } = require('./utils')
 
 module.exports = (plop) => {
-  plop.setGenerator('post entry', {
+  plop.setGenerator('Blog post entry', {
     prompts: [
       {
         type: 'input',
