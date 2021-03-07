@@ -1,0 +1,14 @@
+---
+title: {{title}}
+date: "{{createdDate}}"
+description: "{{description}}
+{{tags}}
+status: {{status}}
+layout: essay
+published: true
+confidence: {{confidence}}
+path: "/essays/{{dashCase title}}"
+abstract: {{abstract}}
+---
+
+<!--{{description}}-->

@@ -1,0 +1,10 @@
+%{
+title: "{{titleCase title}}",
+category: "{{titleCase category}}",
+tags: [{{{tags}}}],
+description: "{{sentenceCase description}}",
+published: {{published}}
+}
+---
+
+<!--{{description}}-->

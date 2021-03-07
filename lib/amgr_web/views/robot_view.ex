@@ -20,4 +20,8 @@ defmodule AmgrWeb.RobotView do
       posts: Amgr.Blog.published_posts()
     })
   end
+
+  def root_domain() do
+    Application.get_env(:amgr, AmgrWeb.Endpoint)[:asset_url] || ""
+  end
 end

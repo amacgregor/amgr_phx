@@ -1,4 +1,5 @@
 defmodule AmgrWeb.Live.Page do
+  @moduledoc false
   use AmgrWeb, :live_view
 
   @impl true

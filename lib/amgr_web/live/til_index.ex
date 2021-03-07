@@ -1,4 +1,6 @@
 defmodule AmgrWeb.Live.TilIndex do
+  @moduledoc false
+
   use AmgrWeb, :live_view
 
   def mount(_params, _session, socket) do

@@ -4,8 +4,9 @@ defmodule AmgrWeb.SitemapController do
   plug :put_layout, false
 
   def index(conn, _params) do
-    posts = Amgr.Blog.all_posts()
-    tils = Amgr.Til.all_posts()
+    posts = Amgr.Blog.published_posts()
+    tils = Amgr.Til.published_posts()
+
     conn
     |> put_resp_content_type("text/xml")
     |> render("index.xml", posts: posts, til: tils)

@@ -1,6 +1,5 @@
 defmodule Amgr.Blog do
-  @moduledoc """
-  """
+  @moduledoc false
 
   use NimblePublisher,
     build: Amgr.Blog.Post,

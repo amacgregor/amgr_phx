@@ -12,6 +12,7 @@
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "plop": "^2.7.4",
     "topbar": "^0.1.4"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "plop-helper-list": "^1.0.0",
     "postcss": "^8.2.2",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^4.1.0",
