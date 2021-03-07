@@ -66,5 +66,4 @@ defmodule AmgrWeb.SEO.Breadcrumbs do
       ]
     }
   end
-
 end

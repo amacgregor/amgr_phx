@@ -6,12 +6,22 @@ defmodule Mix.Tasks.Images do
   def run(_) do
     Enum.each(Amgr.Blog.all_posts(), fn post ->
       Mix.shell().info("Converting #{post.id}")
-      System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [post.id, post.title, "./assets/static/images/patterns/pattern-abstract-3.png"])
+
+      System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [
+        post.id,
+        post.title,
+        "./assets/static/images/patterns/pattern-abstract-3.png"
+      ])
     end)
 
     Enum.each(Amgr.Til.all_posts(), fn post ->
       Mix.shell().info("Converting #{post.id}")
-      System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [post.id, "TIL: " <> post.title, "./assets/static/images/patterns/pattern-abstract-2.png"])
+
+      System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [
+        post.id,
+        "TIL: " <> post.title,
+        "./assets/static/images/patterns/pattern-abstract-2.png"
+      ])
     end)
   end
 end
