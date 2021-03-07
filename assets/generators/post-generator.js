@@ -29,8 +29,8 @@ module.exports = (plop) => {
       },
       {
         type: 'confirm',
-        name: 'draft',
-        message: 'Save as draft?',
+        name: 'published',
+        message: 'Is it published?',
         default: false,
       },
     ],
