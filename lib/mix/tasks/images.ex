@@ -1,4 +1,8 @@
 defmodule Mix.Tasks.Images do
+  @moduledoc """
+  Mix tasks for Generating the Social Media images for blog and til posts
+  """
+
   use Mix.Task
 
   @shortdoc "Generate Social Media images for blog posts"

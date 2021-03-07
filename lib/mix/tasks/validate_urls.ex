@@ -1,4 +1,8 @@
 defmodule Mix.Tasks.ValidateUrls do
+  @moduledoc """
+  Mix task for verifying that the referred urls on each post are valid and reachable
+  """
+
   use Mix.Task
 
   @shortdoc "Verify that URLs are live"

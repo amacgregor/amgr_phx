@@ -16,6 +16,7 @@ defmodule AmgrWeb.SEO.Breadcrumbs do
   alias AmgrWeb.Router.Helpers, as: Routes
 
   defmodule BreadcrumbList do
+    @moduledoc false
     @derive Jason.Encoder
     defstruct "@context": "https://schema.org",
               "@type": "BreadcrumbList",
@@ -23,6 +24,7 @@ defmodule AmgrWeb.SEO.Breadcrumbs do
   end
 
   defmodule BreadcrumbItem do
+    @moduledoc false
     @derive Jason.Encoder
     defstruct [
       :position,

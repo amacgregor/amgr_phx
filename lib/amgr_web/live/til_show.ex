@@ -1,4 +1,8 @@
 defmodule AmgrWeb.Live.TilShow do
+  @moduledoc """
+  LiveView Process for rendering TIL posts
+  """
+
   use AmgrWeb, :live_view
 
   def mount(%{"id" => id, "preview" => "true"}, _session, socket) do

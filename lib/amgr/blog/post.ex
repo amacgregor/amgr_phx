@@ -1,4 +1,6 @@
 defmodule Amgr.Blog.Post do
+  @moduledoc false
+
   @enforce_keys [:id, :title, :body, :description, :reading_time, :tags, :date]
   defstruct [
     :id,

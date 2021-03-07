@@ -1,6 +1,5 @@
 defmodule Amgr.Til do
-  @moduledoc """
-  """
+  @moduledoc false
 
   use NimblePublisher,
     build: Amgr.Til.Post,

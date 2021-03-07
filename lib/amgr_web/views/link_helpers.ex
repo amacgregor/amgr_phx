@@ -1,4 +1,6 @@
 defmodule AmgrWeb.LinkHelpers do
+  @moduledoc false
+
   @doc """
   A shim for Phoenix.HTML.Link.link, but adding attributes for external URLs
   """
