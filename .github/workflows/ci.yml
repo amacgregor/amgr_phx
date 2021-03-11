@@ -97,6 +97,7 @@ jobs:
         status: ${{ job.status }}
         description: Elixir test and code coverage
   deploy:
+    name: Gigalixir Deploy
     needs: [mix-check, build] # Will only run if the test job succeeds
     if: github.ref == 'refs/heads/main' # Only run this job if it is on the main branch
     runs-on: ubuntu-latest
