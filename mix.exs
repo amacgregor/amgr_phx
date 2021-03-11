@@ -50,12 +50,13 @@ defmodule Amgr.MixProject do
       # Test
       {:floki, ">= 0.0.0", only: :test},
       {:finch, "~> 0.3", only: :test},
-      {:excoveralls, "~> 0.12", only: :test},
-      {:sobelow, "~> 0.8", only: :dev},
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:excoveralls, "~> 0.12", only: [:dev, :test]},
+      {:sobelow, "~> 0.8", only: [:dev, :test]},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev
-      {:phoenix_live_reload, "~> 1.2", only: :dev}
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
     ]
   end
 

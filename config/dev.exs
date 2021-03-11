@@ -7,11 +7,11 @@ import Config
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :amgr, AmgrWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: 4040],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  asset_url: "http://localhost:4000",
+  asset_url: "http://localhost:4040",
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js",
@@ -69,3 +69,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :mix_test_watch,
+  tasks: ["format --check-formatted", "credo", "sobelow -i Config.HTTPS", "test", "coveralls"],
+  clear: true
