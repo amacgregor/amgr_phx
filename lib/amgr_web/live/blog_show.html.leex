@@ -1,13 +1,20 @@
 <%# blog_show.leex template %>
 <article id="post-<%= @post.id %>">
-  <h1 class="font-extrabold text-4xl leading-relaxed">
-    <%= @post.title %>
-  </h1>
-
-  <p>
-    Published on <%= Date.to_iso8601(@post.date) %>
-  </p>
-
+  <div id="header" class="grid grid-cols-6 pb-5 border-b-4 border-brand-600">
+    <div class="col-span-6 md:col-span-4">
+      <h1 class="font-extrabold text-4xl leading-relaxed">
+        <%= @post.title %>
+      </h1>
+      <p class="pb-0"><%= @post.description %></p>
+    </div>
+    <div class="col-span-2 hidden md:block ">
+      <div id="meta" class="border-2 border-brand-500 grid grid-flow-col grid-rows-2 inline-block align-middle">
+        <div class="col-span-1 row-span-1 p-2 font-bold text-brand-700 text-xl"><%= @post.date |> Calendar.strftime("%Y") %></div>
+        <div class="col-span-1 row-span-1 p-2 font-bold text-brand-700 border-t-2 border-brand-500"><%= @post.date |> Calendar.strftime("%B, %d") %></div>
+        <div class="col-span-1 row-span-2 p-2 text-2xl font-bold text-brand-700 border-l-2 border-brand-500 text-center text-align-middle pt-7"><%= @post.category %></div>
+      </div>
+    </div>
+  </div>
   <div class="flex flex-wrap mt-2 space-x-4 mb-12 text-sm">
     <%= if @post.original_url do %>
       <div>
@@ -24,12 +31,12 @@
     <% end %>
     <%= if Enum.any?(@post.tags) do %>
       <div>
-        <%= Enum.join(@post.tags, ", ") %>
+        Tags: <%= Enum.join(@post.tags, ", ") %>
       </div>
     <% end %>
   </div>
 
-  <div id="post-content-<%= @post.id %>" phx-hook="Highlight" class="mb-6 print:prose-print dark:prose-dark prose lg:prose-xl" phx-update="ignore">
+  <div id="post-content-<%= @post.id %>" phx-hook="Highlight" class="mb-6 print:prose-print dark:prose-dark prose lg:prose-xl max-w-full" phx-update="ignore">
     <%= raw(@post.body) %>
   </div>
 </article>
