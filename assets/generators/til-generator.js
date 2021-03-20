@@ -47,8 +47,8 @@ module.exports = (plop) => {
         {
           type: 'add',
           path:
-            '../src/pages/journal/{{createdDate}}---{{dashCase title}}/index.md',
-          templateFile: 'templates/journal-md.template',
+          '../../content/til/{{createdDate}}-{{dashCase title}}.md',
+          templateFile: 'templates/til-md.template',
         },
       ]
     },
