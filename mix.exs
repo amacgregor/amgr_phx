@@ -63,7 +63,7 @@ defmodule Amgr.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "cmd yarn --cwd ./assets install"],
-      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"]
+      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"],
     ]
   end
 end
