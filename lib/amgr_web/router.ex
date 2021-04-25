@@ -44,6 +44,11 @@ defmodule AmgrWeb.Router do
     live "/til/:id", Live.TilShow, :show, as: :til
 
     live "/about", Live.Page, :show, as: :about, session: %{"page" => "about"}
+
+    live "/publications", Live.Page, :show,
+      as: :publications,
+      session: %{"page" => "publications"}
+
     live "/projects", Live.Page, :show, as: :projects, session: %{"page" => "projects"}
     live "/books", Live.Page, :show, as: :books, session: %{"page" => "books"}
   end
