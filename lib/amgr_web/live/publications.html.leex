@@ -1,0 +1,18 @@
+<%# publications.html.leex template %>
+<div class="dark:prose-dark prose lg:prose-xl">
+    <article>
+        <h1 class="font-extrabold text-4xl leading-relaxed">Publications</h1>
+        <p class="pb-0">List of publications on external sites, podcasts and other media appearances.</p>
+        <%= for publication_list <- @publications do %>
+            <section>
+                <h3><%= publication_list.year %></h3>
+                <ul>
+                    <%= for article <- publication_list.list do %>
+                        <li><%= article.title %> <a href="<%= article.url %>"><%= article.domain %></a></li>
+                    <% end %>
+                </ul>
+            </section>
+        <% end %>
+    </article>
+</div>
+

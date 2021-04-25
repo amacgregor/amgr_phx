@@ -18,6 +18,8 @@ defmodule Amgr.Application do
       # {Amgr.Worker, arg}
     ]
 
+    load_publications_into_memory()
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Amgr.Supervisor]
@@ -29,5 +31,79 @@ defmodule Amgr.Application do
   def config_change(changed, _new, removed) do
     AmgrWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  defp load_publications_into_memory() do
+    :persistent_term.put(:publications, [
+      %{
+        year: 2021,
+        list: [
+          %{
+            title: "Microservices vs APIs",
+            domain: "lightrun.com",
+            url: "https://lightrun.com/best-practices/microservices-vs-apis/"
+          },
+          %{
+            title: "Building a Real-Time Application in the Phoenix Framework with Elixir",
+            domain: "earthly.dev",
+            url: "https://earthly.dev/blog/real-time-phoenix-elixir/"
+          },
+          %{
+            title: "Podcast: Circuit Breaker and Elixir Patterns with Allan MacGregor",
+            domain: "ThinkingElixir.com",
+            url:
+              "https://thinkingelixir.com/podcast-episodes/032-circuit-breaker-and-elixir-patterns-with-allan-macgregor"
+          }
+        ]
+      },
+      %{
+        year: 2020,
+        list: [
+          %{
+            title: "Interview: My Journey With Elixir and Flow-Based Programming",
+            domain: "Preslav.dev",
+            url: "https://preslav.me/2020/12/10/elixir-community-voices-allan-macgregor/"
+          },
+          %{
+            title: "Podcast: Interview with Allan MacGregor",
+            domain: "Voices of the ElePHPant",
+            url: "https://voicesoftheelephpant.com/2019/06/18/interview-with-allan-macgregor/"
+          },
+          %{
+            title: "Podcast: Is Vim Worth Your Time?",
+            domain: "DevDiscuss",
+            url: "https://dev.to/devdiscuss/s3-e3-is-vim-worth-your-time"
+          }
+        ]
+      },
+      %{
+        year: 2018,
+        list: [
+          %{
+            title: "The Three Seats Of Engineering Leadership",
+            domain: "Forbes.com",
+            url:
+              "https://www.forbes.com/sites/forbestechcouncil/2018/01/16/the-three-seats-of-engineering-leadership/"
+          },
+          %{
+            title:
+              "Podcast: Agency Hiring Strategy, Move from Demac to Browze, Cannabis Legalization",
+            domain: "Commerce Hero",
+            url: "https://www.youtube.com/watch?v=95MTAwGs0uI"
+          }
+        ]
+      },
+      %{
+        year: 2017,
+        list: [
+          %{
+            title: "How to Analyze Tweet Sentiments with PHP Machine Learning",
+            domain: "Sitepoint.com",
+            url:
+              "https://www.sitepoint.com/how-to-analyze-tweet-sentiments-with-php-machine-learning/"
+          }
+        ]
+      }
+    ])
   end
 end
