@@ -65,14 +65,19 @@ defmodule Amgr.Application do
             url: "https://preslav.me/2020/12/10/elixir-community-voices-allan-macgregor/"
           },
           %{
-            title: "Podcast: Interview with Allan MacGregor",
-            domain: "Voices of the ElePHPant",
-            url: "https://voicesoftheelephpant.com/2019/06/18/interview-with-allan-macgregor/"
-          },
-          %{
             title: "Podcast: Is Vim Worth Your Time?",
             domain: "DevDiscuss",
             url: "https://dev.to/devdiscuss/s3-e3-is-vim-worth-your-time"
+          }
+        ]
+      },
+      %{
+        year: 2019,
+        list: [
+          %{
+            title: "Podcast: Interview with Allan MacGregor",
+            domain: "Voices of the ElePHPant",
+            url: "https://voicesoftheelephpant.com/2019/06/18/interview-with-allan-macgregor/"
           }
         ]
       },
@@ -101,6 +106,11 @@ defmodule Amgr.Application do
             domain: "Sitepoint.com",
             url:
               "https://www.sitepoint.com/how-to-analyze-tweet-sentiments-with-php-machine-learning/"
+          },
+          %{
+            title: "The Future of Magento",
+            domain: "Magenticians.com",
+            url: "https://magenticians.com/allan-macgregor-interview/"
           }
         ]
       }
