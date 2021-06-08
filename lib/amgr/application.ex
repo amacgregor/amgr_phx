@@ -53,6 +53,11 @@ defmodule Amgr.Application do
             domain: "ThinkingElixir.com",
             url:
               "https://thinkingelixir.com/podcast-episodes/032-circuit-breaker-and-elixir-patterns-with-allan-macgregor"
+          },
+          %{
+            title: "Dynamic Filters and Facets for Your Shopify Store",
+            domain: "Sajari.com",
+            url: "https://www.sajari.com/blog/shopify-filters-and-facets"
           }
         ]
       },
