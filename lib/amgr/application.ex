@@ -58,6 +58,11 @@ defmodule Amgr.Application do
             title: "Dynamic Filters and Facets for Your Shopify Store",
             domain: "Sajari.com",
             url: "https://www.sajari.com/blog/shopify-filters-and-facets"
+          },
+          %{
+            title: "Achieving Repeatability in Continuous Integration",
+            domain: "earthly.dev",
+            url: "https://earthly.dev/blog/achieving-repeatability/"
           }
         ]
       },
