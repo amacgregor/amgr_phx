@@ -63,6 +63,11 @@ defmodule Amgr.Application do
             title: "Achieving Repeatability in Continuous Integration",
             domain: "earthly.dev",
             url: "https://earthly.dev/blog/achieving-repeatability/"
+          },
+          %{
+            title: "How to Add a Dynamic Search Box and Filters for Your Shopify Store",
+            domain: "Sajari.com",
+            url: "https://www.sajari.com/blog/dynamic-search-and-filters"
           }
         ]
       },
