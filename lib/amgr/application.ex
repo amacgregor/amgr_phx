@@ -68,6 +68,21 @@ defmodule Amgr.Application do
             title: "How to Add a Dynamic Search Box and Filters for Your Shopify Store",
             domain: "Sajari.com",
             url: "https://www.sajari.com/blog/dynamic-search-and-filters"
+          },
+          %{
+            title: "Building Custom Resolvers with Strapi",
+            domain: "Strapi.io",
+            url: "https://strapi.io/blog/building-custom-resolvers-with-strapi"
+          },
+          %{
+            title: "How to Improve Shopify Conversion Rates with Better Search and Discovery",
+            domain: "Sajari.com",
+            url: "https://www.sajari.com/blog/improve-shopify-conversion"
+          },
+          %{
+            title: "https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks/",
+            domain: "fingerprintjs.com",
+            url: "https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks/"
           }
         ]
       },
