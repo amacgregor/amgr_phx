@@ -19,6 +19,7 @@ defmodule Amgr.Application do
     ]
 
     load_publications_into_memory()
+    load_services_into_memory()
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
@@ -80,7 +81,7 @@ defmodule Amgr.Application do
             url: "https://www.sajari.com/blog/improve-shopify-conversion"
           },
           %{
-            title: "https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks/",
+            title: "How to Use FingerprintJS to Prevent Bot Attacks",
             domain: "fingerprintjs.com",
             url: "https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks/"
           }
@@ -144,6 +145,33 @@ defmodule Amgr.Application do
           }
         ]
       }
+    ])
+  end
+
+  defp load_services_into_memory() do
+    :persistent_term.put(:services, [
+      %{
+        category: "Technical Advisory",
+        list: [
+          %{
+            title: "Fractional CTO",
+            description: "",
+            url: "https://www.linkedin.com/in/allanmacgregor/",
+            price: "$5,000 month"
+          },
+        ]
+      },
+      %{
+        category: "Technical Writing",
+        list: [
+          %{
+            title: "Technical Blog Post",
+            description: "Test",
+            url: "https://www.linkedin.com/in/allanmacgregor/",
+            price: "$1,500 per post"
+          },
+        ]
+      },
     ])
   end
 end
