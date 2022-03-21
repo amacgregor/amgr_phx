@@ -158,7 +158,7 @@ defmodule Amgr.Application do
             description: "",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$5,000 month"
-          },
+          }
         ]
       },
       %{
@@ -169,9 +169,9 @@ defmodule Amgr.Application do
             description: "Test",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$1,500 per post"
-          },
+          }
         ]
-      },
+      }
     ])
   end
 end
