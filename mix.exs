@@ -57,14 +57,16 @@ defmodule Amgr.MixProject do
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
     ]
   end
 
   defp aliases do
     [
       setup: ["deps.get", "cmd yarn --cwd ./assets install"],
-      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"]
+      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"],
+      "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end
 end
