@@ -58,7 +58,7 @@ defmodule Amgr.MixProject do
       # Dev
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
-      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
+      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev}
     ]
   end
 
