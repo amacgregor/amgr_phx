@@ -66,7 +66,7 @@ defmodule Amgr.MixProject do
     [
       setup: ["deps.get", "cmd yarn --cwd ./assets install"],
       check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["cmd 'npm install --prefix ./assets'", "esbuild default --minify", "phx.digest"]
     ]
   end
 end

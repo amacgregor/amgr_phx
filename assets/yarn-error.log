@@ -1,0 +1,49 @@
+Arguments: 
+  /home/amacgregor/.asdf/installs/nodejs/14.15.4/bin/node /usr/share/yarn/bin/yarn.js --cwd ./assets install
+
+PATH: 
+  /home/amacgregor/.asdf/plugins/nodejs/shims:/home/amacgregor/.asdf/installs/nodejs/14.15.4/.npm/bin:/home/amacgregor/.asdf/installs/nodejs/14.15.4/bin:/home/amacgregor/.asdf/installs/erlang/23.3.2/erts-11.2.1/bin:/home/amacgregor/.asdf/installs/erlang/23.3.2/bin:/home/amacgregor/.asdf/plugins/elixir/shims:/home/amacgregor/.asdf/installs/elixir/1.13.3-otp-23/bin:/home/amacgregor/.asdf/installs/elixir/1.13.3-otp-23/.mix/escripts:/home/amacgregor/.mix/escripts:/home/amacgregor/.fly/bin:/home/amacgregor/go/bin:/home/amacgregor/.cargo/bin:/home/amacgregor/.cache/rebar3/bin/:/opt/utils/:/home/amacgregor/.asdf/shims:/home/amacgregor/.asdf/bin:/home/amacgregor/.mix/escripts:/home/amacgregor/.fly/bin:/home/amacgregor/go/bin:/home/amacgregor/.cargo/bin:/home/amacgregor/.cache/rebar3/bin/:/opt/utils/:/home/amacgregor/.mix/escripts:/home/amacgregor/.fly/bin:/home/amacgregor/go/bin:/home/amacgregor/.cargo/bin:/home/amacgregor/.cache/rebar3/bin/:/opt/utils/:/home/amacgregor/.cargo/bin:/home/amacgregor/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  14.15.4
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+
+npm manifest: 
+  {
+    "name": "assets",
+    "version": "1.0.0",
+    "description": "",
+    "main": "postcss.config.js",
+    "dependencies": {
+      "alpinejs": "^3.9.2",
+      "autoprefixer": "^10.4.4",
+      "postcss": "^8.4.12",
+      "postcss-cli": "^9.1.0",
+      "postcss-import": "^14.1.0",
+      "postcss-loader": "^7.0.0",
+      "tailwindcss": "^3.0.24",
+      "topbar": "^1.0.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "deploy": "cd .. && mix assets.deploy && rm -f _build/esbuild"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
