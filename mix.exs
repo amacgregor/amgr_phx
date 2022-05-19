@@ -38,14 +38,14 @@ defmodule Amgr.MixProject do
        github: "dbernheisel/earmark", branch: "db-inline-code-smartypants", override: true},
       {:makeup_elixir, ">= 0.0.0"},
       {:nimble_publisher, "~> 0.1.0"},
-      {:phoenix, "~> 1.5.4"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_dashboard, "~> 0.2"},
-      {:phoenix_live_view, "~> 0.15"},
+      {:phoenix, "~> 1.6.0"},
+      {:phoenix_html, "~> 3.0"},
+      {:phoenix_live_view, "~> 0.16.4"},
+      {:phoenix_live_dashboard, "~> 0.5"},
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_poller, "~> 0.5"},
       {:sentry, "~> 8.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"},
       {:timex, "~> 3.6"},
       {:redirect, "~> 0.3.0"},
       # Test
@@ -57,14 +57,16 @@ defmodule Amgr.MixProject do
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev}
     ]
   end
 
   defp aliases do
     [
       setup: ["deps.get", "cmd yarn --cwd ./assets install"],
-      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"]
+      check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"],
+      "assets.deploy": ["esbuild default --minify", "phx.digest"]
     ]
   end
 end

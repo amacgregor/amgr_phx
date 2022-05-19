@@ -25,7 +25,7 @@ defmodule AmgrWeb.Endpoint do
     from: :amgr,
     gzip: true,
     brotli: true,
-    only: ~w[css fonts images js favicon.ico audio video]
+    only: ~w[assets css js fonts images favicon.ico audio video robots.txt]
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

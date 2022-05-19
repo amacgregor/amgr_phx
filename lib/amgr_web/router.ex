@@ -42,19 +42,20 @@ defmodule AmgrWeb.Router do
     live "/posts/:id", Live.BlogShow, :show, as: :post
     live "/til", Live.TilIndex, :index, as: :til
     live "/til/:id", Live.TilShow, :show, as: :til
+    live "/publications", Live.Publications, :index, as: :publications
+    live "/services", Live.Services, :index, as: :services
 
-    live "/about", Live.Page, :show, as: :about, session: %{"page" => "about"}
+    live_session :about, session: %{"page" => "about"} do
+      live "/about", Live.Page, :show, as: :about
+    end
 
-    live "/publications", Live.Publications, :index,
-      as: :publications,
-      session: %{"page" => "publications"}
+    live_session :projects, session: %{"page" => "projects"} do
+      live "/projects", Live.Page, :show, as: :projects
+    end
 
-    live "/services", Live.Services, :index,
-      as: :services,
-      session: %{"page" => "services"}
-
-    live "/projects", Live.Page, :show, as: :projects, session: %{"page" => "projects"}
-    live "/books", Live.Page, :show, as: :books, session: %{"page" => "books"}
+    live_session :books, session: %{"page" => "books"} do
+      live "/books", Live.Page, :show, as: :books
+    end
   end
 
   scope "/admin" do
