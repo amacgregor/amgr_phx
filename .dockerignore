@@ -1,8 +1,0 @@
-_build
-assets/node_modules
-priv/static
-test
-.elixir_ls
-releases
-.git
-deps
