@@ -4,7 +4,7 @@ defmodule Amgr.MixProject do
   def project do
     [
       app: :amgr,
-      version: File.read!("VERSION") |> String.trim(),
+      version: "0.3.0",
       elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix] ++ Mix.compilers(),
