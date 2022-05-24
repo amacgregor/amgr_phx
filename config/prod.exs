@@ -12,7 +12,7 @@ import Config
 config :amgr, AmgrWeb.Endpoint,
   server: true,
   cache_static_manifest: "priv/static/cache_manifest.json",
-  url: [host: "//allanmacgregor.com"]
+  url: [host: "//allanmacgregor.com"],
   check_origin: ["//allanmacgregor.com", "//amgr-blog.fly.dev"]
 
 # Do not print debug messages in production
