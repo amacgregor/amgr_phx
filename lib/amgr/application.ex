@@ -37,6 +37,26 @@ defmodule Amgr.Application do
   defp load_publications_into_memory() do
     :persistent_term.put(:publications, [
       %{
+        year: 2022,
+        list: [
+          %{
+            title: "Scheduling Your GitHub Actions Cron Style",
+            domain: "airplane.dev",
+            url: "https://www.airplane.dev/blog/scheduling-your-github-actions-cron-style"
+          },
+          %{
+            title: "Measuring Typescript Code Coverage with Jest and GitHub Actions",
+            domain: "codecov.io",
+            url: "https://about.codecov.io/blog/measuring-typescript-code-coverage-with-jest-and-github-actions/"
+          },
+          %{
+            title: "How to Build a Hosted Checkout Page/Checkout Toolkit (Embedded) Combo",
+            domain: "rapyd.net",
+            url: "https://community.rapyd.net/t/how-to-build-a-hosted-checkout-page-and-embed-a-checkout-toolkit/1699"
+          }
+        ]
+      },
+      %{
         year: 2021,
         list: [
           %{
@@ -84,6 +104,11 @@ defmodule Amgr.Application do
             title: "How to Use FingerprintJS to Prevent Bot Attacks",
             domain: "fingerprintjs.com",
             url: "https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks/"
+          },
+          %{
+            title: "The Complete Guide to Docker Secrete",
+            domain: "earthly.dev",
+            url: "https://earthly.dev/blog/docker-secrets/"
           }
         ]
       },
