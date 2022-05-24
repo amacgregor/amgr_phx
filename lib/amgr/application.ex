@@ -47,12 +47,14 @@ defmodule Amgr.Application do
           %{
             title: "Measuring Typescript Code Coverage with Jest and GitHub Actions",
             domain: "codecov.io",
-            url: "https://about.codecov.io/blog/measuring-typescript-code-coverage-with-jest-and-github-actions/"
+            url:
+              "https://about.codecov.io/blog/measuring-typescript-code-coverage-with-jest-and-github-actions/"
           },
           %{
             title: "How to Build a Hosted Checkout Page/Checkout Toolkit (Embedded) Combo",
             domain: "rapyd.net",
-            url: "https://community.rapyd.net/t/how-to-build-a-hosted-checkout-page-and-embed-a-checkout-toolkit/1699"
+            url:
+              "https://community.rapyd.net/t/how-to-build-a-hosted-checkout-page-and-embed-a-checkout-toolkit/1699"
           }
         ]
       },
