@@ -50,6 +50,9 @@ COPY priv priv
 # step down so that `lib` is available.
 COPY assets assets
 
+# Copy the markdown files to the build directory
+COPY content content
+
 # compile assets
 RUN mix assets.deploy
 

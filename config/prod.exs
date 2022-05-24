@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
@@ -11,8 +11,8 @@ use Mix.Config
 # before starting your production server.
 config :amgr, AmgrWeb.Endpoint,
   server: true,
-  cache_static_manifest: "priv/static/cache_manifest.json"
-
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  url: [host: "//allanmacgregor.com"]
 # Do not print debug messages in production
 config :logger, level: :info
 
