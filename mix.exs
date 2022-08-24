@@ -66,6 +66,7 @@ defmodule Amgr.MixProject do
     [
       setup: ["deps.get", "cmd yarn --cwd ./assets install"],
       check: ["format --check-formatted", "sobelow -i Config.HTTPS", "credo"],
+      write: "plop --plopfile assets/generators/plopfile.js",
       "assets.deploy": [
         "esbuild default --minify",
         "phx.digest"
