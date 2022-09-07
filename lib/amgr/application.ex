@@ -59,20 +59,17 @@ defmodule Amgr.Application do
           %{
             title: "What Is PCI Compliance?",
             domain: "goteleport.com",
-            url:
-              "https://goteleport.com/blog/what-is-pci/"
+            url: "https://goteleport.com/blog/what-is-pci/"
           },
           %{
             title: "Web Scraping with Elixir",
             domain: "scrapingbee.com/",
-            url:
-              "https://www.scrapingbee.com/blog/web-scraping-elixir/"
+            url: "https://www.scrapingbee.com/blog/web-scraping-elixir/"
           },
           %{
             title: "How to Take Website Screenshots With Elixir",
             domain: "urlbox.io",
-            url:
-              "https://www.urlbox.io/how-to-take-website-screenshots-elixir"
+            url: "https://www.urlbox.io/how-to-take-website-screenshots-elixir"
           },
           %{
             title: "Test Credit and Debit Card Numbers for Every Payment API",
@@ -83,8 +80,7 @@ defmodule Amgr.Application do
           %{
             title: "How to Handle Rapyd Payouts with FX",
             domain: "rapyd.net",
-            url:
-              "https://community.rapyd.net/t/how-to-handle-rapyd-payouts-with-fx/52601"
+            url: "https://community.rapyd.net/t/how-to-handle-rapyd-payouts-with-fx/52601"
           },
           %{
             title: "Benchmark Your Elixir App's Performance with Benchee",
