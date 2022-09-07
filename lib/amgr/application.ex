@@ -55,6 +55,42 @@ defmodule Amgr.Application do
             domain: "rapyd.net",
             url:
               "https://community.rapyd.net/t/how-to-build-a-hosted-checkout-page-and-embed-a-checkout-toolkit/1699"
+          },
+          %{
+            title: "What Is PCI Compliance?",
+            domain: "goteleport.com",
+            url:
+              "https://goteleport.com/blog/what-is-pci/"
+          },
+          %{
+            title: "Web Scraping with Elixir",
+            domain: "scrapingbee.com/",
+            url:
+              "https://www.scrapingbee.com/blog/web-scraping-elixir/"
+          },
+          %{
+            title: "How to Take Website Screenshots With Elixir",
+            domain: "urlbox.io",
+            url:
+              "https://www.urlbox.io/how-to-take-website-screenshots-elixir"
+          },
+          %{
+            title: "Test Credit and Debit Card Numbers for Every Payment API",
+            domain: "rapyd.net",
+            url:
+              "https://community.rapyd.net/t/test-credit-and-debit-card-numbers-for-every-payment-api/10458"
+          },
+          %{
+            title: "How to Handle Rapyd Payouts with FX",
+            domain: "rapyd.net",
+            url:
+              "https://community.rapyd.net/t/how-to-handle-rapyd-payouts-with-fx/52601"
+          },
+          %{
+            title: "Benchmark Your Elixir App's Performance with Benchee",
+            domain: "appsignal.com",
+            url:
+              "https://blog.appsignal.com/2022/09/06/benchmark-your-elixir-apps-performance-with-benchee"
           }
         ]
       },

@@ -14,7 +14,7 @@ defmodule Mix.Tasks.Images do
       System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [
         post.id,
         post.title,
-        "./assets/static/images/patterns/pattern-abstract-3.png"
+        "./priv/static/images/patterns/pattern-abstract-3.png"
       ])
     end)
 
@@ -24,7 +24,7 @@ defmodule Mix.Tasks.Images do
       System.cmd(File.cwd!() <> "/bin/make-post-image.sh", [
         post.id,
         "TIL: " <> post.title,
-        "./assets/static/images/patterns/pattern-abstract-2.png"
+        "./priv/static/images/patterns/pattern-abstract-2.png"
       ])
     end)
   end
