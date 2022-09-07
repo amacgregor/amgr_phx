@@ -2,7 +2,7 @@
 title: "The Thing Most Developers Get Wrong On Interviews",
 category: "Career",
 tags: ["career","soft skills","interviewing"],
-description: 'Most developers focus a lot on technical skills but often fail to prepare for the most basic of soft skills interviews'
+description: "Most developers focus a lot on technical skills but often fail to prepare for the most basic of soft skills interviews"
 }
 ---
 
