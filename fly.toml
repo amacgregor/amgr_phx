@@ -9,6 +9,7 @@ processes = []
 [env]
   PHX_HOST = "amgr-blog.fly.dev"
   PORT = "8080"
+  ASSET_URL = "https://allanmacgregor.com"
 
 [experimental]
   allowed_public_ports = []
