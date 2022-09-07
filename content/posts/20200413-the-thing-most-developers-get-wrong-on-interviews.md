@@ -4,9 +4,8 @@ category: "Career",
 tags: ["career","soft skills","interviewing"],
 description: "Most developers focus a lot on technical skills but often fail to prepare for the most basic of soft skills interviews"
 }
----
 
-<!--Most developers focus a lot on technical skills but often fail to prepare for the most basic of soft skills interviews-->
+---
 
 <blockquote className="p-4 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 quote">
 As an interviewee your main priority is to help the interviewer visualize what kind of employee you'll be at their company, and how your previous experience and achievements makes you a great for the position.
