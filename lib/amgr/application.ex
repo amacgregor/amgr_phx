@@ -63,7 +63,7 @@ defmodule Amgr.Application do
           },
           %{
             title: "Web Scraping with Elixir",
-            domain: "scrapingbee.com/",
+            domain: "scrapingbee.com",
             url: "https://www.scrapingbee.com/blog/web-scraping-elixir/"
           },
           %{
