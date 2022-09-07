@@ -14,7 +14,7 @@ config :amgr, AmgrWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
   url: [host: "//allanmacgregor.com"],
   check_origin: ["//allanmacgregor.com", "//amgr-blog.fly.dev"],
-  asset_url: "https://allanmacgregor.com",
+  asset_url: "https://allanmacgregor.com"
 
 # Do not print debug messages in production
 config :logger, level: :info
