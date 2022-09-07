@@ -21,6 +21,7 @@
 <%= if @og.image_url do %>
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:image:alt" content="<%= @og.image_alt %>">
+  <meta property="twitter:image" content="<%= @og.image_url %>">
   <meta property="og:image" content="<%= @og.image_url %>">
   <meta property="og:image:alt" content="<%= @og.image_alt %>">
 <% else %>
