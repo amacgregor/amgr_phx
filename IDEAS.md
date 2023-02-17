@@ -1,0 +1,10 @@
+- A tutorial on using the Elixir NIF (Native Implemented Function) feature to integrate Elixir with C or other low-level languages
+- An in-depth guide to using Elixir's dynamic instrumentation and tracing tools to debug and optimize your Elixir code
+- A tutorial on using Elixir's distributed database library, Ecto, to build a scalable and fault-tolerant database-backed application
+- An overview of Elixir's support for meta-programming and how to use it to write expressive and flexible code
+- A tutorial on using Elixir's GenStage module to build a scalable and fault-tolerant data pipeline
+- An introduction to Elixir's support for parallel and concurrent programming, and how to use it to build efficient and responsive systems
+- A tutorial on using the Elixir OTP Supervisor and Dynamic Supervisor features to build a scalable and fault-tolerant system
+- An in-depth guide to using Elixir's Task and Agent modules to build concurrent and parallel systems
+- An overview of Elixir's support for soft real-time systems and how to use it to build responsive and reliable systems
+- A tutorial on using Elixir's distributed computing features, such as Erlang's distributed node and Elixir's :rpc module, to build distributed systems.
