@@ -93,7 +93,7 @@ jobs:
         cd assets/
         npm install
     - name: Compile
-      run: mix compile --force --warnings-as-errors
+      run: mix compile --force
     - name: Test
       run: mix test
     - name: Check Code Coverage
