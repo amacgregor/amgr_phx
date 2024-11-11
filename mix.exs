@@ -59,7 +59,7 @@ defmodule Amgr.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
-      {:plonk, runtime: false, git: "git@github.com:amacgregor/plonk.git"},
+      {:plonk, runtime: false, git: "https://github.com/amacgregor/plonk.git"},
       {:nimble_options, "~> 1.1.0", override: true}
     ]
   end
