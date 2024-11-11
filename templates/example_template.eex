@@ -1,0 +1,7 @@
+<%# templates/example_template.eex %>
+# Title: <%= title %>
+# Category: <%= category %>
+# Description: <%= description %>
+# Tags: <%= tags %>
+
+# Your content here...

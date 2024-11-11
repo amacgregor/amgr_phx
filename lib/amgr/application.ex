@@ -37,6 +37,31 @@ defmodule Amgr.Application do
   defp load_publications_into_memory() do
     :persistent_term.put(:publications, [
       %{
+        year: 2023,
+        list: [
+          %{
+            title: "How to Build an In-house On-call Training Program",
+            domain: "fiberplane.com",
+            url: "https://fiberplane.com/blog/how-to-build-an-in-house-on-call-training-program"
+          },
+          %{
+            title: "The Top Test Automation Frameworks in 2023",
+            domain: "saucelabs.com",
+            url: "https://saucelabs.com/resources/blog/top-test-automation-frameworks-in-2023"
+          },
+          %{
+            title: "Real-Time Alerts: The Killer Use Case for Event-Driven Architecture",
+            domain: "iexcloud.io",
+            url: "https://iexcloud.io/blog/unlocking-real-time-alerts-in-distributed-systems-the-killer-use-case-for-event-driven-architecture"
+          },
+          %{
+            title: "Guide to Scraping E-commerce Websites",
+            domain: "brightdata.com",
+            url: "https://brightdata.com/blog/how-tos/ecommerce-web-scraping-guide"
+          }
+        ]
+      },
+      %{
         year: 2022,
         list: [
           %{
@@ -87,6 +112,11 @@ defmodule Amgr.Application do
             domain: "appsignal.com",
             url:
               "https://blog.appsignal.com/2022/09/06/benchmark-your-elixir-apps-performance-with-benchee"
+          },
+          %{
+            title: "Running Background Jobs with the Laravel Scheduler",
+            domain: "airplane.dev",
+            url: "https://www.airplane.dev/blog/how-to-schedule-jobs-with-laravel-scheduler"
           }
         ]
       },
@@ -214,7 +244,7 @@ defmodule Amgr.Application do
         list: [
           %{
             title: "Fractional CTO",
-            description: "",
+            description: "As a non-technical founder, do you find yourself at a standstill, hindered by the absence of a technical co-founder? Worry no more. My role as your fractional CTO is to bridge that gap, empowering you to surge ahead even before you gain significant traction.",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$5,000 month"
           }
@@ -225,7 +255,7 @@ defmodule Amgr.Application do
         list: [
           %{
             title: "Technical Blog Post",
-            description: "Test",
+            description: "Are you striving to establish yourself as a thought leader in your industry, or aiming to engage effectively with your customers by highlighting the power of your products and services? Look no further. My technical writing service is designed to elevate your communication, transforming complex technical concepts into engaging, easy-to-understand content.",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$1,500 per post"
           }

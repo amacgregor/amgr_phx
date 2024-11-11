@@ -40,6 +40,8 @@ defmodule AmgrWeb.Router do
     live "/", Live.Page, :show
     live "/posts", Live.BlogIndex, :index, as: :post
     live "/posts/:id", Live.BlogShow, :show, as: :post
+    live "/eve", Live.EveIndex, :index, as: :eve
+    live "/eve/:id", Live.EveShow, :show, as: :eve
     live "/til", Live.TilIndex, :index, as: :til
     live "/til/:id", Live.TilShow, :show, as: :til
     live "/publications", Live.Publications, :index, as: :publications

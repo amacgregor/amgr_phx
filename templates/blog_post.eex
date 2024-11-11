@@ -1,0 +1,18 @@
+%{
+title: "<%= title %>",
+category: "<%= category %>",
+tags: <%= 
+  tags
+  |> String.split(",") 
+  |> Enum.map(&String.trim/1) 
+  |> Enum.map(fn tag -> "\"#{tag}\"" end) 
+  |> Enum.join(", ") 
+  |> (&("[#{&1}]")).()
+%>,
+description: "<%= description %>",
+published: <%= published == :yes %>
+}
+
+---
+
+<!-- <%= description %> -->

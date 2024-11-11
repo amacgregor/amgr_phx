@@ -40,3 +40,6 @@ npm-debug.log
 
 # Ignore Jetbrains files
 .idea/
+
+# Ignore Plonk output
+/output/
