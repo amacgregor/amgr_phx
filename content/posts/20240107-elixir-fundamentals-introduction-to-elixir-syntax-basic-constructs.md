@@ -3,7 +3,7 @@ title: "Elixir Fundamentals - Introduction to Elixir: Syntax, Basic Constructs",
 category: "Programming",
 tags: ["elixir", "programming", "learning"],
 description: "Introduction to the basic concepts of elixir, syntax, data structures and basic concepts",
-published: true
+published: false
 }
 
 ---
