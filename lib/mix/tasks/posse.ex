@@ -54,7 +54,8 @@ defmodule Mix.Tasks.Posse do
   end
 
   defp append_link_and_tags(content, link, max_length \\ 3000) do
-    seo_tags = "#YourSEOtags"  # Replace with actual SEO tags
+    # Replace with actual SEO tags
+    seo_tags = "#YourSEOtags"
     full_content = "#{content}\nRead more: #{link} #{seo_tags}"
     String.slice(full_content, 0, max_length)
   end

@@ -61,7 +61,6 @@ defmodule Amgr.MixProject do
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
       {:plonk, runtime: false, git: "git@github.com:amacgregor/plonk.git"},
       {:nimble_options, "~> 1.1.0", override: true}
-
     ]
   end
 

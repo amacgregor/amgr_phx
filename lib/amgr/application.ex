@@ -52,7 +52,8 @@ defmodule Amgr.Application do
           %{
             title: "Real-Time Alerts: The Killer Use Case for Event-Driven Architecture",
             domain: "iexcloud.io",
-            url: "https://iexcloud.io/blog/unlocking-real-time-alerts-in-distributed-systems-the-killer-use-case-for-event-driven-architecture"
+            url:
+              "https://iexcloud.io/blog/unlocking-real-time-alerts-in-distributed-systems-the-killer-use-case-for-event-driven-architecture"
           },
           %{
             title: "Guide to Scraping E-commerce Websites",
@@ -244,7 +245,8 @@ defmodule Amgr.Application do
         list: [
           %{
             title: "Fractional CTO",
-            description: "As a non-technical founder, do you find yourself at a standstill, hindered by the absence of a technical co-founder? Worry no more. My role as your fractional CTO is to bridge that gap, empowering you to surge ahead even before you gain significant traction.",
+            description:
+              "As a non-technical founder, do you find yourself at a standstill, hindered by the absence of a technical co-founder? Worry no more. My role as your fractional CTO is to bridge that gap, empowering you to surge ahead even before you gain significant traction.",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$5,000 month"
           }
@@ -255,7 +257,8 @@ defmodule Amgr.Application do
         list: [
           %{
             title: "Technical Blog Post",
-            description: "Are you striving to establish yourself as a thought leader in your industry, or aiming to engage effectively with your customers by highlighting the power of your products and services? Look no further. My technical writing service is designed to elevate your communication, transforming complex technical concepts into engaging, easy-to-understand content.",
+            description:
+              "Are you striving to establish yourself as a thought leader in your industry, or aiming to engage effectively with your customers by highlighting the power of your products and services? Look no further. My technical writing service is designed to elevate your communication, transforming complex technical concepts into engaging, easy-to-understand content.",
             url: "https://www.linkedin.com/in/allanmacgregor/",
             price: "$1,500 per post"
           }
