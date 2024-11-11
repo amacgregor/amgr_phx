@@ -1,4 +1,7 @@
 defmodule Plonk.GeneratorConfig do
+  @moduledoc """
+  This module defines the configuration for various content generators.
+  """
   def generators do
     [
       %{
