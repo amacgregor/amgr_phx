@@ -19,6 +19,9 @@ jobs:
         with:
           elixir-version: "1.13.3" # Define the elixir version [required]
           otp-version: "23.3.2" # Define the OTP version [required]
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Restore dependencies cache
         uses: actions/cache@v2
         with:
@@ -57,6 +60,9 @@ jobs:
         apk upgrade
         apk add --no-cache make bash zlib openssl openssh git g++ wget curl ca-certificates nodejs npm
     - uses: actions/checkout@v1
+    - uses: webfactory/ssh-agent@v0.9.0
+      with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - uses: actions/cache@v1
       name: "Cache Mix"
       with:
