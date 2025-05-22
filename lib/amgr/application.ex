@@ -47,7 +47,8 @@ defmodule Amgr.Application do
           %{
             title: "Risk in Fintech: The Hidden Engineering Challenge",
             domain: "linkedin.com",
-            url: "https://www.linkedin.com/pulse/risk-fintech-hidden-engineering-challenge-allan-macgregor-b2ahc"
+            url:
+              "https://www.linkedin.com/pulse/risk-fintech-hidden-engineering-challenge-allan-macgregor-b2ahc"
           }
         ]
       },
@@ -57,12 +58,14 @@ defmodule Amgr.Application do
           %{
             title: "Elixir for Fintech: Why It's the Best Choice for Modern Financial Apps",
             domain: "allanmacgregor.com",
-            url: "https://allanmacgregor.com/posts/from_transactions_to_trust_why_elixir_is_the_future_of_fintech"
+            url:
+              "https://allanmacgregor.com/posts/from_transactions_to_trust_why_elixir_is_the_future_of_fintech"
           },
           %{
             title: "Powerful Caching in Elixir with Cachex",
             domain: "appsignal.com",
-            url: "https://blog.appsignal.com/2024/03/05/powerful-caching-in-elixir-with-cachex.html"
+            url:
+              "https://blog.appsignal.com/2024/03/05/powerful-caching-in-elixir-with-cachex.html"
           },
           %{
             title: "Using Dependency Injection in Elixir",
@@ -72,7 +75,8 @@ defmodule Amgr.Application do
           %{
             title: "Advanced Dependency Injection in Elixir with Rewire",
             domain: "appsignal.com",
-            url: "https://blog.appsignal.com/2024/06/11/advanced-dependency-injection-in-elixir-with-rewire.html"
+            url:
+              "https://blog.appsignal.com/2024/06/11/advanced-dependency-injection-in-elixir-with-rewire.html"
           }
         ]
       },
