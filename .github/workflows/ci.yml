@@ -18,7 +18,7 @@ jobs:
         uses: erlef/setup-elixir@v1
         with:
           elixir-version: "1.13.3" # Define the elixir version [required]
-          otp-version: "23.3.2" # Define the OTP version [required]
+          otp-version: "24.3" # Define the OTP version [required]
       - uses: webfactory/ssh-agent@v0.9.0
         with:
             ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
