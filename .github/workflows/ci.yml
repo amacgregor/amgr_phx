@@ -23,7 +23,7 @@ jobs:
         with:
             ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Restore dependencies cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: deps
           key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
@@ -67,17 +67,17 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-    - uses: actions/cache@v1
+    - uses: actions/cache@v4
       name: "Cache Mix"
       with:
         path: ~/.mix
         key: ${{ runner.os }}-mix-${{ hashFiles('.tool-versions') }}
-    - uses: actions/cache@v1
+    - uses: actions/cache@v4
       name: "Cache Hex"
       with:
         path: ~/.hex
         key: ${{ runner.os }}-hex-${{ hashFiles('.tool-versions') }}
-    - uses: actions/cache@v1
+    - uses: actions/cache@v4
       name: "Cache Dependencies"
       with:
         path: deps
