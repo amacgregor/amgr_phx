@@ -37,6 +37,46 @@ defmodule Amgr.Application do
   defp load_publications_into_memory() do
     :persistent_term.put(:publications, [
       %{
+        year: 2025,
+        list: [
+          %{
+            title: "Top Test Automation Frameworks in 2025",
+            domain: "saucelabs.com",
+            url: "https://saucelabs.com/resources/blog/top-test-automation-frameworks-in-2023"
+          },
+          %{
+            title: "Risk in Fintech: The Hidden Engineering Challenge",
+            domain: "linkedin.com",
+            url: "https://www.linkedin.com/pulse/risk-fintech-hidden-engineering-challenge-allan-macgregor-b2ahc"
+          }
+        ]
+      },
+      %{
+        year: 2024,
+        list: [
+          %{
+            title: "Elixir for Fintech: Why It's the Best Choice for Modern Financial Apps",
+            domain: "allanmacgregor.com",
+            url: "https://allanmacgregor.com/posts/from_transactions_to_trust_why_elixir_is_the_future_of_fintech"
+          },
+          %{
+            title: "Powerful Caching in Elixir with Cachex",
+            domain: "appsignal.com",
+            url: "https://blog.appsignal.com/2024/03/05/powerful-caching-in-elixir-with-cachex.html"
+          },
+          %{
+            title: "Using Dependency Injection in Elixir",
+            domain: "appsignal.com",
+            url: "https://blog.appsignal.com/2024/05/21/using-dependency-injection-in-elixir.html"
+          },
+          %{
+            title: "Advanced Dependency Injection in Elixir with Rewire",
+            domain: "appsignal.com",
+            url: "https://blog.appsignal.com/2024/06/11/advanced-dependency-injection-in-elixir-with-rewire.html"
+          }
+        ]
+      },
+      %{
         year: 2023,
         list: [
           %{
