@@ -11,7 +11,7 @@ on:
 jobs:
   mix-check:
     name: Mix Check
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - name: Set up Elixir
@@ -44,7 +44,7 @@ jobs:
           description: Elixir quality checks
   build:
     name: Mix Test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       MIX_ENV: test
       AUTH_USER: admin
