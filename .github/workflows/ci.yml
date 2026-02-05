@@ -37,6 +37,7 @@ jobs:
       - name: Notify Discord about Status
         uses: sarisia/actions-status-discord@v1
         if: always()
+        continue-on-error: true
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
@@ -105,6 +106,7 @@ jobs:
     - name: Notify Discord about Status
       uses: sarisia/actions-status-discord@v1
       if: always()
+      continue-on-error: true
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       with:
