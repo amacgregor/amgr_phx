@@ -134,17 +134,50 @@ defmodule Mix.Tasks.Drafts do
     new_filename = "#{format_date(date)}-#{draft.filename}"
     new_path = Path.join(@posts_dir, new_filename)
 
-    if File.exists?(new_path) do
-      IO.puts("  #{IO.ANSI.red()}Error: #{new_filename} already exists!#{IO.ANSI.reset()}\n")
+    IO.puts("\n  Will create: #{new_path}")
+    IO.puts("  Confirm publish? [y/N]: ")
+
+    confirm = IO.gets("  > ") |> String.trim() |> String.downcase()
+
+    if confirm != "y" do
+      IO.puts("  #{IO.ANSI.yellow()}Cancelled#{IO.ANSI.reset()}\n")
     else
-      content = File.read!(draft.path)
-      updated_content = update_frontmatter_published(content)
+      do_publish(draft, new_path)
+    end
+  end
 
-      File.write!(new_path, updated_content)
-      File.rm!(draft.path)
+  defp do_publish(draft, new_path) do
+    cond do
+      File.exists?(new_path) ->
+        IO.puts("  #{IO.ANSI.red()}Error: #{Path.basename(new_path)} already exists!#{IO.ANSI.reset()}\n")
 
-      IO.puts("  #{IO.ANSI.green()}✓ Published to #{new_path}#{IO.ANSI.reset()}")
-      IO.puts("  #{IO.ANSI.green()}✓ Removed draft #{draft.path}#{IO.ANSI.reset()}\n")
+      not File.exists?(draft.path) ->
+        IO.puts("  #{IO.ANSI.red()}Error: Draft file not found: #{draft.path}#{IO.ANSI.reset()}\n")
+
+      true ->
+        case File.read(draft.path) do
+          {:ok, content} ->
+            updated_content = update_frontmatter_published(content)
+
+            case File.write(new_path, updated_content) do
+              :ok ->
+                case File.rm(draft.path) do
+                  :ok ->
+                    IO.puts("  #{IO.ANSI.green()}✓ Published to #{new_path}#{IO.ANSI.reset()}")
+                    IO.puts("  #{IO.ANSI.green()}✓ Removed draft #{draft.path}#{IO.ANSI.reset()}\n")
+
+                  {:error, reason} ->
+                    IO.puts("  #{IO.ANSI.yellow()}✓ Published to #{new_path}#{IO.ANSI.reset()}")
+                    IO.puts("  #{IO.ANSI.red()}✗ Failed to remove draft: #{inspect(reason)}#{IO.ANSI.reset()}\n")
+                end
+
+              {:error, reason} ->
+                IO.puts("  #{IO.ANSI.red()}Error writing file: #{inspect(reason)}#{IO.ANSI.reset()}\n")
+            end
+
+          {:error, reason} ->
+            IO.puts("  #{IO.ANSI.red()}Error reading draft: #{inspect(reason)}#{IO.ANSI.reset()}\n")
+        end
     end
   end
 
