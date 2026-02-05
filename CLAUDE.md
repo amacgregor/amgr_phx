@@ -30,6 +30,9 @@ mix coveralls.html           # Coverage report
 
 # Assets
 mix assets.deploy            # Build + digest for production
+
+# Content management
+mix drafts                   # Interactive TUI to publish drafts
 ```
 
 ## Architecture
@@ -47,6 +50,20 @@ Post filenames follow the pattern `YYYYMMDD-slug.md`. The date and slug are pars
 Each content context (`Blog`, `Til`, `Eve`) follows an identical pattern: NimblePublisher loads markdown, sorts by date descending, and exposes `all_posts/0`, `published_posts/0`, `get_post_by_id!/1`, and `get_posts_by_tag!/1`.
 
 **Because content is compiled into the module, adding/editing a markdown file requires recompilation to take effect.**
+
+### Draft Workflow
+
+Drafts live in `priv/drafts/` (not compiled by NimblePublisher). Filenames use just the slug without date prefix (e.g., `my-article.md`).
+
+To publish a draft, use `mix drafts`:
+1. Select the draft by number
+2. Enter publish date (defaults to today)
+3. Confirm — the tool moves the file to `content/posts/YYYYMMDD-slug.md` and sets `published: true` in frontmatter
+
+Writing style reference files for the `macgregor-tech-writer` agent are in `priv/`:
+- `voice_dna_analysis.md` — extracted voice patterns
+- `writing_meta_prompt.md` — voice replication guidelines
+- `ai_writting_patterns_reference.md` — patterns to avoid
 
 ### Web Layer
 
@@ -79,3 +96,9 @@ Defined in `.tool-versions`: Elixir 1.13.3 (OTP 23), Erlang 23.3.2, Node.js 16.1
 ### Environment Variables
 
 - `AUTH_USER` / `AUTH_PASS` — basic auth for `/admin/dashboard` (defaults to admin/admin in dev)
+
+## Code Style Notes
+
+- Credo enforces max nesting depth of 2 and cyclomatic complexity of 9 — use `with` statements and extract helper functions to reduce complexity
+- Always run `mix format` before committing — CI checks formatting
+- Mix tasks go in `lib/mix/tasks/` with module name `Mix.Tasks.TaskName`
