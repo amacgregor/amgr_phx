@@ -147,53 +147,43 @@ defmodule Mix.Tasks.Drafts do
   end
 
   defp do_publish(draft, new_path) do
-    cond do
-      File.exists?(new_path) ->
-        IO.puts(
-          "  #{IO.ANSI.red()}Error: #{Path.basename(new_path)} already exists!#{IO.ANSI.reset()}\n"
-        )
+    with :ok <- check_target_not_exists(new_path),
+         :ok <- check_source_exists(draft.path),
+         {:ok, content} <- File.read(draft.path),
+         updated_content = update_frontmatter_published(content),
+         :ok <- File.write(new_path, updated_content) do
+      print_success("✓ Published to #{new_path}")
+      remove_draft(draft.path)
+    else
+      {:error, :target_exists} ->
+        print_error("Error: #{Path.basename(new_path)} already exists!")
 
-      not File.exists?(draft.path) ->
-        IO.puts(
-          "  #{IO.ANSI.red()}Error: Draft file not found: #{draft.path}#{IO.ANSI.reset()}\n"
-        )
+      {:error, :source_missing} ->
+        print_error("Error: Draft file not found: #{draft.path}")
 
-      true ->
-        case File.read(draft.path) do
-          {:ok, content} ->
-            updated_content = update_frontmatter_published(content)
-
-            case File.write(new_path, updated_content) do
-              :ok ->
-                case File.rm(draft.path) do
-                  :ok ->
-                    IO.puts("  #{IO.ANSI.green()}✓ Published to #{new_path}#{IO.ANSI.reset()}")
-
-                    IO.puts(
-                      "  #{IO.ANSI.green()}✓ Removed draft #{draft.path}#{IO.ANSI.reset()}\n"
-                    )
-
-                  {:error, reason} ->
-                    IO.puts("  #{IO.ANSI.yellow()}✓ Published to #{new_path}#{IO.ANSI.reset()}")
-
-                    IO.puts(
-                      "  #{IO.ANSI.red()}✗ Failed to remove draft: #{inspect(reason)}#{IO.ANSI.reset()}\n"
-                    )
-                end
-
-              {:error, reason} ->
-                IO.puts(
-                  "  #{IO.ANSI.red()}Error writing file: #{inspect(reason)}#{IO.ANSI.reset()}\n"
-                )
-            end
-
-          {:error, reason} ->
-            IO.puts(
-              "  #{IO.ANSI.red()}Error reading draft: #{inspect(reason)}#{IO.ANSI.reset()}\n"
-            )
-        end
+      {:error, reason} ->
+        print_error("Error: #{inspect(reason)}")
     end
   end
+
+  defp check_target_not_exists(path) do
+    if File.exists?(path), do: {:error, :target_exists}, else: :ok
+  end
+
+  defp check_source_exists(path) do
+    if File.exists?(path), do: :ok, else: {:error, :source_missing}
+  end
+
+  defp remove_draft(path) do
+    case File.rm(path) do
+      :ok -> print_success("✓ Removed draft #{path}")
+      {:error, reason} -> print_warning("✗ Failed to remove draft: #{inspect(reason)}")
+    end
+  end
+
+  defp print_success(msg), do: IO.puts("  #{IO.ANSI.green()}#{msg}#{IO.ANSI.reset()}\n")
+  defp print_error(msg), do: IO.puts("  #{IO.ANSI.red()}#{msg}#{IO.ANSI.reset()}\n")
+  defp print_warning(msg), do: IO.puts("  #{IO.ANSI.yellow()}#{msg}#{IO.ANSI.reset()}\n")
 
   defp prompt_date do
     today = Date.utc_today()
