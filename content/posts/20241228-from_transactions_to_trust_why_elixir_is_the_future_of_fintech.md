@@ -132,8 +132,7 @@ For any technology leaders in the fintech space, Elixir is a compelling choice f
 
 Not to mention that Elixir’s clean syntax and developer-friendly tools make it a joy to work with, accelerating development cycles and reducing maintenance costs. As the fintech industry continues to grow and evolve, Elixir is well-positioned to meet the demands of modern financial applications.
 
-
 If you're building a fintech product and wondering how Elixir can fit into your stack, let's connect. Drop a comment or reach out directly!
----
+---git a
 
 
