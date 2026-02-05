@@ -3,7 +3,7 @@ title: "Founder Mode is Bulls**t",
 category: "Management",
 tags: ["management", "startups", "founders"],
 description: "A criticism and rebuttal of Paul Graham's Founder Mode essay -- survivorship bias, false dichotomies, and the cult of the founder",
-published: false
+published: true
 }
 
 ---

@@ -3,7 +3,7 @@ title: "Using Elixir Meta Programming To Write Expressive And Flexible Code",
 category: "Programming",
 tags: ["elixir","functional programming","programming","meta-programming"],
 description: "Elixir functional programming programming meta programming",
-published: false
+published: true
 }
 ---
 
