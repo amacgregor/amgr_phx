@@ -63,13 +63,6 @@
               'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'publications',
               'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'publications'
             }" %>
-          <%= live_redirect "Services", to: Routes.services_path(@conn, :index),
-            "@click": "$dispatch('navigate', 'services')",
-            class: "hidden inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
-            ":class": "{
-              'border-brand-500 dark:text-gray-200 text-gray-900 focus:border-brand-700': currentRoute === 'services',
-              'border-transparent dark:text-gray-300 dark:hover:text-gray-200 text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:focus:text-gray-200 focus:text-gray-700 focus:border-gray-300': currentRoute !== 'services'
-            }" %>
           <%# live_redirect "Components", to: Routes.components_path(@conn, :index),
             "@click": "$dispatch('navigate', 'components')",
             ":class": "{
