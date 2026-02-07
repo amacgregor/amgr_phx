@@ -56,6 +56,7 @@ defmodule Amgr.MixProject do
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       # Dev
+      {:mogrify, "~> 0.9.3", only: :dev},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},

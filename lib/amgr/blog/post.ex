@@ -13,6 +13,7 @@ defmodule Amgr.Blog.Post do
     :tags,
     :date,
     :discussion_url,
+    :card_theme,
     published: true
   ]
 

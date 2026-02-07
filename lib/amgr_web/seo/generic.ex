@@ -5,6 +5,7 @@ defmodule AmgrWeb.SEO.Generic do
   https://support.google.com/webmasters/answer/7451184?hl=en
   """
 
-  defstruct description: "A blog about development",
-            title: "Allan MacGregor's Blog"
+  defstruct description:
+              "Elixir engineering, fintech architecture, and technical leadership insights from a CTO building regulated systems.",
+            title: "Allan MacGregor | Elixir Engineering & Technical Leadership"
 end
