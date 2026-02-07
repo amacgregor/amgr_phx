@@ -163,8 +163,8 @@ defmodule Mix.Tasks.Drafts do
          :ok <- File.write(new_path, updated_content) do
       print_success("✓ Published to #{new_path}")
       remove_draft(draft.path)
-      generate_card(draft, new_path)
-      prompt_typefully(draft, new_path)
+      card_path = generate_card(draft, new_path)
+      prompt_typefully(draft, new_path, card_path)
     else
       {:error, :target_exists} ->
         print_error("Error: #{Path.basename(new_path)} already exists!")
@@ -198,10 +198,12 @@ defmodule Mix.Tasks.Drafts do
     case CardGenerator.generate(post, force: true) do
       {:ok, path} ->
         print_success("✓ Card generated: #{path}")
+        path
 
       {:error, reason} ->
         print_warning("✗ Card generation failed: #{reason}")
         IO.puts("    Run 'mix cards --post #{post_id}' to retry")
+        nil
     end
   end
 
@@ -212,7 +214,7 @@ defmodule Mix.Tasks.Drafts do
     |> List.last()
   end
 
-  defp prompt_typefully(draft, new_path) do
+  defp prompt_typefully(draft, new_path, card_path) do
     if Typefully.configured?() do
       post_id = extract_post_id(new_path)
       post_url = "https://allanmacgregor.com/posts/#{post_id}"
@@ -221,8 +223,8 @@ defmodule Mix.Tasks.Drafts do
       IO.puts("  [d] Save as draft  [p] Publish now  [s] Skip")
 
       case IO.gets("  > ") |> String.trim() |> String.downcase() do
-        "d" -> create_typefully_post(draft, post_url, publish_now: false)
-        "p" -> create_typefully_post(draft, post_url, publish_now: true)
+        "d" -> create_typefully_post(draft, post_url, card_path, publish_now: false)
+        "p" -> create_typefully_post(draft, post_url, card_path, publish_now: true)
         _ -> print_warning("Skipped Typefully")
       end
     else
@@ -234,7 +236,10 @@ defmodule Mix.Tasks.Drafts do
     end
   end
 
-  defp create_typefully_post(draft, post_url, opts) do
+  defp create_typefully_post(draft, post_url, card_path, opts) do
+    media_ids = upload_card_if_available(card_path)
+    opts = Keyword.put(opts, :media_ids, media_ids)
+
     IO.puts("  Creating Typefully post...")
 
     case Typefully.create_post(draft.title, draft.description || "", post_url, opts) do
@@ -244,6 +249,26 @@ defmodule Mix.Tasks.Drafts do
 
       {:error, reason} ->
         print_warning("Typefully failed: #{inspect(reason)}")
+    end
+  end
+
+  defp upload_card_if_available(nil), do: []
+
+  defp upload_card_if_available(card_path) do
+    if File.exists?(card_path) do
+      IO.puts("  Uploading card image to Typefully...")
+
+      case Typefully.upload_media(card_path) do
+        {:ok, media_id} ->
+          print_success("✓ Card uploaded")
+          [media_id]
+
+        {:error, reason} ->
+          print_warning("✗ Card upload failed: #{inspect(reason)}")
+          []
+      end
+    else
+      []
     end
   end
 
