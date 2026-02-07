@@ -7,7 +7,7 @@ published: false
 }
 ---
 
-It is 3 AM. Your pager fires. The production dashboard shows request latency climbing from 50ms to 12 seconds. Memory usage is spiking. Users are churning. You have two options: restart the node and hope, or connect to the running system and actually understand what is happening.
+It is 3 AM. Your phone starts buzzing. The production dashboard shows request latency climbing from 50ms to 12 seconds. Memory usage is spiking. Users are churning. You have two options: restart the node and hope, or connect to the running system and actually understand what is happening.
 
 If you choose the first option, stop reading. This article is for engineers who want to diagnose problems, not defer them.
 
