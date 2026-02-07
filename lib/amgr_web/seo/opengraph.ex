@@ -60,22 +60,29 @@ defmodule AmgrWeb.SEO.OpenGraph do
     |> put_image(post)
   end
 
-  defp put_image(og, post) do
-    file = "/images/cards/#{post.id}.png"
+  @default_og_image "/images/patterns/pattern-abstract-3.png"
 
-    exists? =
-      [Application.app_dir(:amgr), "/priv/static", file]
+  defp put_image(og, post) do
+    card_file = "/images/cards/#{post.id}.png"
+
+    card_exists? =
+      [Application.app_dir(:amgr), "/priv/static", card_file]
       |> Path.join()
       |> File.exists?()
 
-    if exists? do
+    if card_exists? do
       %{
         og
-        | image_url: static_url() <> Routes.static_path(@endpoint, file),
+        | image_url: static_url() <> Routes.static_path(@endpoint, card_file),
           image_alt: post.title
       }
     else
-      og
+      # Use default fallback image
+      %{
+        og
+        | image_url: static_url() <> Routes.static_path(@endpoint, @default_og_image),
+          image_alt: "Allan MacGregor - Elixir Engineering & Technical Leadership"
+      }
     end
   end
 

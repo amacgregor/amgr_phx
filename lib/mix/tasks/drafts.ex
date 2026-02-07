@@ -5,6 +5,8 @@ defmodule Mix.Tasks.Drafts do
   Lists all drafts in priv/drafts/ and allows publishing them to content/posts/
   with automatic date prefixing and frontmatter updates.
 
+  Automatically generates a social media card image after publishing.
+
   ## Usage
 
       mix drafts
@@ -12,6 +14,8 @@ defmodule Mix.Tasks.Drafts do
   """
 
   use Mix.Task
+
+  alias Amgr.CardGenerator
 
   @shortdoc "Manage draft posts - list, preview, and publish"
 
@@ -50,7 +54,8 @@ defmodule Mix.Tasks.Drafts do
       title: frontmatter[:title] || Path.basename(path, ".md"),
       description: frontmatter[:description],
       tags: frontmatter[:tags] || [],
-      category: frontmatter[:category]
+      category: frontmatter[:category],
+      card_theme: frontmatter[:card_theme]
     }
   end
 
@@ -154,6 +159,7 @@ defmodule Mix.Tasks.Drafts do
          :ok <- File.write(new_path, updated_content) do
       print_success("✓ Published to #{new_path}")
       remove_draft(draft.path)
+      generate_card(draft, new_path)
     else
       {:error, :target_exists} ->
         print_error("Error: #{Path.basename(new_path)} already exists!")
@@ -163,6 +169,38 @@ defmodule Mix.Tasks.Drafts do
 
       {:error, reason} ->
         print_error("Error: #{inspect(reason)}")
+    end
+  end
+
+  defp generate_card(draft, new_path) do
+    # Extract the post ID from the new filename (YYYYMMDD-slug.md -> slug)
+    post_id =
+      new_path
+      |> Path.basename(".md")
+      |> String.split("-", parts: 2)
+      |> List.last()
+
+    # Build a minimal post struct for card generation
+    post = %Amgr.Blog.Post{
+      id: post_id,
+      title: draft.title,
+      description: draft.description || "",
+      tags: draft.tags,
+      date: Date.utc_today(),
+      body: "",
+      reading_time: 0,
+      card_theme: Map.get(draft, :card_theme)
+    }
+
+    IO.puts("  Generating social media card...")
+
+    case CardGenerator.generate(post, force: true) do
+      {:ok, path} ->
+        print_success("✓ Card generated: #{path}")
+
+      {:error, reason} ->
+        print_warning("✗ Card generation failed: #{reason}")
+        IO.puts("    Run 'mix cards --post #{post_id}' to retry")
     end
   end
 
