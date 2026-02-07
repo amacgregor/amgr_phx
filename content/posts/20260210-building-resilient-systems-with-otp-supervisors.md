@@ -3,7 +3,7 @@ title: "Building Resilient Systems with OTP Supervisors",
 category: "Programming",
 tags: ["elixir", "otp", "fault-tolerance", "architecture"],
 description: "Deep dive into supervisor strategies and designing supervision trees for real-world fault tolerance",
-published: false
+published: true
 }
 ---
 
@@ -422,7 +422,7 @@ That is resilience.
 
 ---
 
-**Claims to verify:**
+<!-- **Claims to verify:**
 - Default supervisor restart values (3 restarts in 5 seconds) should be verified against current OTP/Elixir documentation
 - DynamicSupervisor internal strategy behavior may vary by Elixir version
-- Specific syntax for supervisor child specs should be tested against your Elixir version (examples use Elixir 1.14+ conventions)
+- Specific syntax for supervisor child specs should be tested against your Elixir version (examples use Elixir 1.14+ conventions) -->

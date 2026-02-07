@@ -48,9 +48,10 @@ defmodule Amgr.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:timex, "~> 3.6"},
       {:redirect, "~> 0.3.0"},
+      {:req, "~> 0.5"},
       # Test
       {:floki, ">= 0.0.0", only: :test},
-      {:finch, "~> 0.3", only: :test},
+      {:finch, "~> 0.17"},
       {:excoveralls, "~> 0.12", only: [:dev, :test]},
       {:sobelow, "~> 0.8", only: [:dev, :test]},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},

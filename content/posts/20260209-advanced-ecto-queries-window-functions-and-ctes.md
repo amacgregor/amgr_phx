@@ -3,7 +3,7 @@ title: "Advanced Ecto Queries: Window Functions and CTEs",
 category: "Programming",
 tags: ["elixir", "ecto", "postgresql", "sql"],
 description: "Using window functions, CTEs, and advanced SQL features through Ecto",
-published: false
+published: true
 }
 ---
 
@@ -440,8 +440,8 @@ Master these techniques, and you'll stop seeing "complex SQL requirements" as a 
 
 ---
 
-**Claims to verify with current data:**
+<!-- **Claims to verify with current data:**
 
 - Ecto version compatibility: The CTE syntax (`with_cte/3`, `recursive_ctes/1`) was introduced in Ecto 3.x. Verify specific version requirements against current Ecto documentation.
 - PostgreSQL version requirements: Some window function features and CTE capabilities vary by PostgreSQL version. LATERAL joins require PostgreSQL 9.3+.
-- Performance characteristics of recursive CTEs vs. application-level recursion may vary based on data distribution and indexes. Benchmark with your specific dataset.
+- Performance characteristics of recursive CTEs vs. application-level recursion may vary based on data distribution and indexes. Benchmark with your specific dataset. -->

@@ -43,3 +43,6 @@ npm-debug.log
 
 # Ignore Plonk output
 /output/
+
+# Environment variables
+.env

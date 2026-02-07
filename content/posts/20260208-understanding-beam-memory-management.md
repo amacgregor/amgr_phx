@@ -3,7 +3,7 @@ title: "Understanding BEAM Memory Management",
 category: "Programming",
 tags: ["elixir", "beam", "performance", "memory"],
 description: "Process heaps, garbage collection, and memory profiling in Elixir",
-published: false
+published: true
 }
 ---
 
@@ -339,4 +339,4 @@ Understand the model. Profile when problems arise. Fix the actual bottleneck. Ev
 
 ---
 
-*Claims to verify: The 64-byte threshold for heap vs refc binaries is accurate for recent OTP versions but may change. The default `fullsweep_after` value of 65535 should be verified against your OTP version. Specific `:recon` function signatures should be checked against the current library version.*
+<!-- *Claims to verify: The 64-byte threshold for heap vs refc binaries is accurate for recent OTP versions but may change. The default `fullsweep_after` value of 65535 should be verified against your OTP version. Specific `:recon` function signatures should be checked against the current library version.* -->

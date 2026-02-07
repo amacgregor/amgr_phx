@@ -7,6 +7,9 @@ defmodule Mix.Tasks.Drafts do
 
   Automatically generates a social media card image after publishing.
 
+  Optionally creates a Typefully draft/post for social media promotion when
+  TYPEFULLY_API_KEY and TYPEFULLY_SOCIAL_SET_ID environment variables are set.
+
   ## Usage
 
       mix drafts
@@ -16,6 +19,7 @@ defmodule Mix.Tasks.Drafts do
   use Mix.Task
 
   alias Amgr.CardGenerator
+  alias Amgr.Typefully
 
   @shortdoc "Manage draft posts - list, preview, and publish"
 
@@ -160,6 +164,7 @@ defmodule Mix.Tasks.Drafts do
       print_success("✓ Published to #{new_path}")
       remove_draft(draft.path)
       generate_card(draft, new_path)
+      prompt_typefully(draft, new_path)
     else
       {:error, :target_exists} ->
         print_error("Error: #{Path.basename(new_path)} already exists!")
@@ -174,11 +179,7 @@ defmodule Mix.Tasks.Drafts do
 
   defp generate_card(draft, new_path) do
     # Extract the post ID from the new filename (YYYYMMDD-slug.md -> slug)
-    post_id =
-      new_path
-      |> Path.basename(".md")
-      |> String.split("-", parts: 2)
-      |> List.last()
+    post_id = extract_post_id(new_path)
 
     # Build a minimal post struct for card generation
     post = %Amgr.Blog.Post{
@@ -201,6 +202,48 @@ defmodule Mix.Tasks.Drafts do
       {:error, reason} ->
         print_warning("✗ Card generation failed: #{reason}")
         IO.puts("    Run 'mix cards --post #{post_id}' to retry")
+    end
+  end
+
+  defp extract_post_id(new_path) do
+    new_path
+    |> Path.basename(".md")
+    |> String.split("-", parts: 2)
+    |> List.last()
+  end
+
+  defp prompt_typefully(draft, new_path) do
+    if Typefully.configured?() do
+      post_id = extract_post_id(new_path)
+      post_url = "https://allanmacgregor.com/posts/#{post_id}"
+
+      IO.puts("\n  Create Typefully post?")
+      IO.puts("  [d] Save as draft  [p] Publish now  [s] Skip")
+
+      case IO.gets("  > ") |> String.trim() |> String.downcase() do
+        "d" -> create_typefully_post(draft, post_url, publish_now: false)
+        "p" -> create_typefully_post(draft, post_url, publish_now: true)
+        _ -> print_warning("Skipped Typefully")
+      end
+    else
+      print_warning(
+        "Typefully not configured (missing TYPEFULLY_API_KEY or TYPEFULLY_SOCIAL_SET_ID)"
+      )
+
+      :skip
+    end
+  end
+
+  defp create_typefully_post(draft, post_url, opts) do
+    IO.puts("  Creating Typefully post...")
+
+    case Typefully.create_post(draft.title, draft.description || "", post_url, opts) do
+      {:ok, :created} ->
+        action = if opts[:publish_now], do: "published", else: "draft created"
+        print_success("Typefully #{action}")
+
+      {:error, reason} ->
+        print_warning("Typefully failed: #{inspect(reason)}")
     end
   end
 
