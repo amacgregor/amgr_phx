@@ -18,7 +18,7 @@ ARG RUNNER_IMAGE="debian:bullseye-20210902-slim"
 FROM ${BUILDER_IMAGE} as builder
 
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git \
+RUN apt-get update -y && apt-get install -y build-essential git curl ca-certificates \
     && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # prepare build dir
@@ -52,6 +52,10 @@ COPY assets assets
 
 # Copy the markdown files to the build directory
 COPY content content
+
+# install esbuild binary manually (Erlang 23's SSL can't connect to npm registry)
+RUN curl -fsSL https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.17.11.tgz \
+    | tar xz -C /tmp && cp /tmp/package/bin/esbuild _build/esbuild-linux-x64 && chmod +x _build/esbuild-linux-x64
 
 # compile assets
 RUN mix assets.deploy
